@@ -1,25 +1,21 @@
 import { Hero } from "@/components/hero"
-import{ FeaturedGames} from "@/components/featured-games"
-import{ LiveStats} from "@/components/live-stats"
-import { Promotions} from "@/components/promotions"
-import{ CasinoGamesGuide} from "@/components/seo/casino-games-guide"
-import{ CasinoExperienceContent} from "@/components/seo/casino-experience-content"
-import { CasinoBonusesOverview } from "@/components/seo/casino-bonuses-overview"
-import {  CasinoReviewsTestimonials } from "@/components/seo/casino-reviews-testimonials"
-import CasinoFaqSeo from "@/components/seo/casino-faq-seo"
+import { ProblemIdentification } from "@/components/problem-identification"
+import { ImpactAnalysis } from "@/components/impact-analysis"
+import { TechnicalSolution } from "@/components/technical-solution"
+import { TestingStrategy } from "@/components/testing-strategy"
+import { Implementation } from "@/components/implementation"
+import { CallToAction } from "@/components/call-to-action"
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gray-900">
+    <main className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
       <Hero />
-      <FeaturedGames />
-      <LiveStats />
-      <Promotions />
-      <CasinoGamesGuide />
-      <CasinoExperienceContent />
-      <CasinoBonusesOverview />
-      <CasinoReviewsTestimonials />
-      <CasinoFaqSeo />
+      <ProblemIdentification />
+      <ImpactAnalysis />
+      <TechnicalSolution />
+      <TestingStrategy />
+      <Implementation />
+      <CallToAction />
     </main>
   )
 }
