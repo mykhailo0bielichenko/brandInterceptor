@@ -5,25 +5,25 @@ import { DollarSign, TrendingUp, Calendar, Target, BarChart } from "lucide-react
 import { CalendlyScheduler } from "./calendly-scheduler"
 
 export function InvestmentAsk() {
-  // Realistic first-year revenue progression
+  // Updated realistic first-year revenue progression
   const monthlyData = [
     { month: 1, sites: 0, revenue: 0, costs: 27000, profit: -27000 },
     { month: 2, sites: 0, revenue: 0, costs: 27000, profit: -27000 },
     { month: 3, sites: 0, revenue: 0, costs: 27000, profit: -27000 },
     { month: 4, sites: 0, revenue: 0, costs: 27000, profit: -27000 },
-    { month: 5, sites: 0, revenue: 0, costs: 27000, profit: -27000 },
-    { month: 6, sites: 0, revenue: 0, costs: 27000, profit: -27000 },
-    { month: 7, sites: 5, revenue: 4500, costs: 11000, profit: -6500 },
-    { month: 8, sites: 15, revenue: 13500, costs: 11000, profit: 2500 },
-    { month: 9, sites: 25, revenue: 22500, costs: 11000, profit: 11500 },
-    { month: 10, sites: 40, revenue: 36000, costs: 11000, profit: 25000 },
-    { month: 11, sites: 60, revenue: 54000, costs: 11000, profit: 43000 },
-    { month: 12, sites: 80, revenue: 72000, costs: 11000, profit: 61000 },
+    { month: 5, sites: 5, revenue: 500, costs: 27000, profit: -26500 },
+    { month: 6, sites: 15, revenue: 1500, costs: 27000, profit: -25500 },
+    { month: 7, sites: 35, revenue: 4500, costs: 11000, profit: -6500 },
+    { month: 8, sites: 65, revenue: 13500, costs: 11000, profit: 2500 },
+    { month: 9, sites: 100, revenue: 22500, costs: 11000, profit: 11500 },
+    { month: 10, sites: 140, revenue: 36000, costs: 11000, profit: 25000 },
+    { month: 11, sites: 200, revenue: 54000, costs: 11000, profit: 43000 },
+    { month: 12, sites: 300, revenue: 72000, costs: 11000, profit: 61000 },
   ]
 
-  const totalFirstYearRevenue = monthlyData.slice(6).reduce((sum, month) => sum + month.revenue, 0)
-  const totalFirstYearCosts = 162000 + 11000 * 6 // Initial investment + 6 months operating
-  const firstYearProfit = totalFirstYearRevenue - 66000 // Only operating costs for revenue months
+  const totalFirstYearRevenue = monthlyData.slice(4).reduce((sum, month) => sum + month.revenue, 0) // Months 5-12
+  const totalOperatingCosts = 11000 * 8 // 8 months of operating costs (May-Dec)
+  const firstYearProfit = totalFirstYearRevenue - totalOperatingCosts
   const firstYearROI = Math.round((firstYearProfit / 162000) * 100)
 
   return (
@@ -91,9 +91,9 @@ export function InvestmentAsk() {
                 <div className="space-y-4">
                   <div className="grid grid-cols-2 gap-4">
                     <div className="text-center p-3 bg-purple-900/20 rounded-lg">
-                      <div className="text-lg font-bold text-white">Month 7</div>
+                      <div className="text-lg font-bold text-white">Month 5</div>
                       <div className="text-sm text-gray-300">First Revenue</div>
-                      <div className="text-purple-300 font-semibold">$4,500</div>
+                      <div className="text-purple-300 font-semibold">$500</div>
                     </div>
                     <div className="text-center p-3 bg-blue-900/20 rounded-lg">
                       <div className="text-lg font-bold text-white">Month 8</div>
@@ -105,13 +105,13 @@ export function InvestmentAsk() {
                     <div className="text-xl font-bold text-white">Month 12</div>
                     <div className="text-sm text-gray-300 mb-1">Monthly Revenue</div>
                     <div className="text-green-300 font-bold text-2xl">$72,000</div>
-                    <div className="text-xs text-gray-400 mt-1">Based on 80 active sites</div>
+                    <div className="text-xs text-gray-400 mt-1">Based on 300 active sites</div>
                   </div>
                   <div className="text-center p-4 bg-yellow-900/20 rounded-lg border border-yellow-500/20">
                     <div className="text-lg font-bold text-white">Year 1 Total</div>
-                    <div className="text-sm text-gray-300 mb-1">Revenue (6 months)</div>
-                    <div className="text-yellow-300 font-bold text-xl">$202,500</div>
-                    <div className="text-xs text-gray-400 mt-1">July - December revenue</div>
+                    <div className="text-sm text-gray-300 mb-1">Revenue (8 months)</div>
+                    <div className="text-yellow-300 font-bold text-xl">$204,500</div>
+                    <div className="text-xs text-gray-400 mt-1">May - December revenue</div>
                   </div>
                 </div>
               </CardContent>
@@ -166,27 +166,35 @@ export function InvestmentAsk() {
                     <h4 className="text-white font-semibold mb-3">Monthly Progression (Year 1)</h4>
                     <div className="space-y-2 text-sm">
                       <div className="flex justify-between">
-                        <span className="text-gray-300">Month 7 (5 sites):</span>
+                        <span className="text-gray-300">Month 5 (5 sites):</span>
+                        <span className="text-green-300 font-semibold">$500</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-gray-300">Month 6 (15 sites):</span>
+                        <span className="text-green-300 font-semibold">$1,500</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-gray-300">Month 7 (35 sites):</span>
                         <span className="text-green-300 font-semibold">$4,500</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-300">Month 8 (15 sites):</span>
+                        <span className="text-gray-300">Month 8 (65 sites):</span>
                         <span className="text-green-300 font-semibold">$13,500</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-300">Month 9 (25 sites):</span>
+                        <span className="text-gray-300">Month 9 (100 sites):</span>
                         <span className="text-green-300 font-semibold">$22,500</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-300">Month 10 (40 sites):</span>
+                        <span className="text-gray-300">Month 10 (140 sites):</span>
                         <span className="text-green-300 font-semibold">$36,000</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-300">Month 11 (60 sites):</span>
+                        <span className="text-gray-300">Month 11 (200 sites):</span>
                         <span className="text-green-300 font-semibold">$54,000</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-300">Month 12 (80 sites):</span>
+                        <span className="text-gray-300">Month 12 (300 sites):</span>
                         <span className="text-green-300 font-semibold">$72,000</span>
                       </div>
                     </div>
@@ -197,19 +205,19 @@ export function InvestmentAsk() {
                     <div className="space-y-2 text-sm">
                       <div className="flex justify-between">
                         <span className="text-gray-300">Target sites by Month 24:</span>
-                        <span className="text-purple-300 font-semibold">120 sites</span>
+                        <span className="text-purple-300 font-semibold">500+ sites</span>
                       </div>
                       <div className="flex justify-between">
                         <span className="text-gray-300">Monthly revenue potential:</span>
-                        <span className="text-purple-300 font-semibold">$216,000</span>
+                        <span className="text-purple-300 font-semibold">$120,000+</span>
                       </div>
                       <div className="flex justify-between">
                         <span className="text-gray-300">Annual revenue (Year 2):</span>
-                        <span className="text-purple-300 font-semibold">$2.59M</span>
+                        <span className="text-purple-300 font-semibold">$1.44M+</span>
                       </div>
                       <div className="flex justify-between">
                         <span className="text-gray-300">Net profit (Year 2):</span>
-                        <span className="text-purple-300 font-bold">$2.46M</span>
+                        <span className="text-purple-300 font-bold">$1.31M+</span>
                       </div>
                     </div>
                   </div>
@@ -222,31 +230,31 @@ export function InvestmentAsk() {
                     <h4 className="text-white font-semibold mb-2">First Year ROI (Conservative)</h4>
                     <div className="space-y-1 text-sm">
                       <div className="flex justify-between">
-                        <span className="text-gray-300">Year 1 Revenue (6 months):</span>
-                        <span className="text-yellow-300 font-bold">$202,500</span>
+                        <span className="text-gray-300">Year 1 Revenue (8 months):</span>
+                        <span className="text-yellow-300 font-bold">$204,500</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-300">Operating Costs (6 months):</span>
-                        <span className="text-yellow-300 font-bold">$66,000</span>
+                        <span className="text-gray-300">Operating Costs (8 months):</span>
+                        <span className="text-yellow-300 font-bold">$88,000</span>
                       </div>
                       <div className="flex justify-between">
                         <span className="text-gray-300">Net Profit (Year 1):</span>
-                        <span className="text-yellow-300 font-bold">$136,500</span>
+                        <span className="text-yellow-300 font-bold">$116,500</span>
                       </div>
                       <div className="flex justify-between border-t border-yellow-500/20 pt-2 mt-2">
                         <span className="text-white font-semibold">ROI on Investment:</span>
-                        <span className="text-yellow-300 font-bold text-lg">84%</span>
+                        <span className="text-yellow-300 font-bold text-lg">72%</span>
                       </div>
                     </div>
                     <div className="mt-3 pt-3 border-t border-yellow-500/20">
                       <div className="text-xs text-gray-400">
-                        <strong>Calculation:</strong> ($136,500 profit / $162K investment) × 100 = 84% ROI
+                        <strong>Calculation:</strong> ($116,500 profit / $162K investment) × 100 = 72% ROI
                       </div>
                       <div className="text-xs text-gray-400 mt-1">
-                        <strong>Timeline:</strong> Break-even at Month 8, positive cash flow from Month 9
+                        <strong>Timeline:</strong> First revenue Month 5, break-even Month 8, positive cash flow Month 9
                       </div>
                       <div className="text-xs text-gray-400 mt-1">
-                        <strong>Year 2 ROI:</strong> Expected 1,500%+ as sites reach full maturity
+                        <strong>Year 2 ROI:</strong> Expected 800%+ as platform reaches full scale
                       </div>
                     </div>
                   </div>

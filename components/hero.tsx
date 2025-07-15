@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Zap, Target, TrendingUp } from "lucide-react"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
-import { InfoIcon } from "lucide-react"
+import { InfoIcon, ExternalLink } from "lucide-react"
 
 export function Hero() {
   const scrollToROI = () => {
@@ -57,12 +57,13 @@ export function Hero() {
                     <p className="max-w-xs">
                       Source:{" "}
                       <a
-                        href="https://chatgpt.com/share/676b8e5a-4a28-8004-a5c7-c4b5c8f8e8e8"
+                        href="https://chatgpt.com/share/68758d06-23ac-8008-ae3e-1adf5095b844"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-blue-300 underline"
+                        className="text-blue-300 underline inline-flex items-center gap-1"
                       >
-                        SEMrush Industry Study 2024
+                        Casino Industry Analysis Report
+                        <ExternalLink className="h-3 w-3" />
                       </a>
                     </p>
                   </TooltipContent>
@@ -73,7 +74,7 @@ export function Hero() {
 
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
               <div className="flex items-center justify-center mb-2">
-                <div className="text-3xl sm:text-4xl font-bold text-blue-400">{"<5%"}</div>
+                <div className="text-3xl sm:text-4xl font-bold text-blue-400">{"<35%"}</div>
                 <Tooltip>
                   <TooltipTrigger asChild>
                     <InfoIcon className="w-4 h-4 ml-2 text-gray-400 cursor-help" />
@@ -82,12 +83,13 @@ export function Hero() {
                     <p className="max-w-xs">
                       Source:{" "}
                       <a
-                        href="https://chatgpt.com/share/676b8e5a-4a28-8004-a5c7-c4b5c8f8e8e8"
+                        href="https://chatgpt.com/share/68758d06-23ac-8008-ae3e-1adf5095b844"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-blue-300 underline"
+                        className="text-blue-300 underline inline-flex items-center gap-1"
                       >
-                        Ahrefs Casino Vertical Analysis
+                        Casino Industry Analysis Report
+                        <ExternalLink className="h-3 w-3" />
                       </a>
                     </p>
                   </TooltipContent>
@@ -102,7 +104,7 @@ export function Hero() {
                   onClick={scrollToROI}
                   className="text-3xl sm:text-4xl font-bold text-yellow-400 hover:text-yellow-300 transition-colors cursor-pointer"
                 >
-                  84%
+                  72%
                 </button>
                 <Tooltip>
                   <TooltipTrigger asChild>
