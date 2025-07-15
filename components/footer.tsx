@@ -4,6 +4,20 @@ import { Button } from "@/components/ui/button"
 import { Phone, Mail, Linkedin, ExternalLink } from "lucide-react"
 
 export function Footer() {
+  const scrollToSection = (sectionId: string) => {
+    // If we're not on the home page, navigate to home page with anchor
+    if (window.location.pathname !== "/") {
+      window.location.href = `/#${sectionId}`
+      return
+    }
+
+    // If we're on the home page, scroll to the section
+    const element = document.getElementById(sectionId)
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" })
+    }
+  }
+
   return (
     <footer className="bg-black/40 border-t border-white/10 py-12 px-6 lg:px-8">
       <div className="mx-auto max-w-7xl">
@@ -56,46 +70,30 @@ export function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-4">Documentation</h4>
             <div className="space-y-2 text-sm text-gray-400">
-              <a
-                href="#solution-architecture"
-                className="block cursor-pointer hover:text-white transition-colors"
-                onClick={(e) => {
-                  e.preventDefault()
-                  document.getElementById("solution-architecture")?.scrollIntoView({ behavior: "smooth" })
-                }}
+              <button
+                className="block cursor-pointer hover:text-white transition-colors text-left"
+                onClick={() => scrollToSection("solution-architecture")}
               >
                 Technical Architecture
-              </a>
-              <a
-                href="#investment-ask"
-                className="block cursor-pointer hover:text-white transition-colors"
-                onClick={(e) => {
-                  e.preventDefault()
-                  document.getElementById("investment-ask")?.scrollIntoView({ behavior: "smooth" })
-                }}
+              </button>
+              <button
+                className="block cursor-pointer hover:text-white transition-colors text-left"
+                onClick={() => scrollToSection("investment-ask")}
               >
                 Financial Projections
-              </a>
-              <a
-                href="#market-opportunity"
-                className="block cursor-pointer hover:text-white transition-colors"
-                onClick={(e) => {
-                  e.preventDefault()
-                  document.getElementById("market-opportunity")?.scrollIntoView({ behavior: "smooth" })
-                }}
+              </button>
+              <button
+                className="block cursor-pointer hover:text-white transition-colors text-left"
+                onClick={() => scrollToSection("market-opportunity")}
               >
                 Risk Assessment
-              </a>
-              <a
-                href="#team"
-                className="block cursor-pointer hover:text-white transition-colors"
-                onClick={(e) => {
-                  e.preventDefault()
-                  document.getElementById("team")?.scrollIntoView({ behavior: "smooth" })
-                }}
+              </button>
+              <button
+                className="block cursor-pointer hover:text-white transition-colors text-left"
+                onClick={() => scrollToSection("team")}
               >
                 Team Profiles
-              </a>
+              </button>
             </div>
           </div>
         </div>
