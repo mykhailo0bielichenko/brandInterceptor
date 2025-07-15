@@ -17,6 +17,7 @@ import {
 } from "lucide-react"
 import Link from "next/link"
 import { CalendlyScheduler } from "@/components/calendly-scheduler"
+import { Footer } from "@/components/footer"
 
 export default function AboutPage() {
   const experiences = [
