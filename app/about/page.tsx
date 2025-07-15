@@ -40,7 +40,7 @@ export default function AboutPage() {
         "Application Programming Interfaces (API)",
       ],
       description: "Technical SEO consulting with modern web technologies including Next.js 15 and React development.",
-      color: "border-green-500/20 bg-green-900/10",
+      color: "border-green-500 bg-green-900/10",
     },
     {
       title: "SEO Manager",
@@ -69,7 +69,7 @@ export default function AboutPage() {
         "Marketing Analytics",
         "Web Design",
       ],
-      color: "border-blue-500/20 bg-blue-900/10",
+      color: "border-blue-500 bg-blue-900/10",
     },
     {
       title: "Search Engine Optimization Specialist",
@@ -97,7 +97,7 @@ export default function AboutPage() {
         "Team Management",
         "Google Search Console",
       ],
-      color: "border-purple-500/20 bg-purple-900/10",
+      color: "border-purple-500 bg-purple-900/10",
     },
     {
       title: "Search Engine Optimization Manager",
@@ -116,7 +116,7 @@ export default function AboutPage() {
         "Google Search Console",
         "Cascading Style Sheets (CSS)",
       ],
-      color: "border-yellow-500/20 bg-yellow-900/10",
+      color: "border-yellow-500 bg-yellow-900/10",
     },
     {
       title: "SEO Specialist",
@@ -136,7 +136,7 @@ export default function AboutPage() {
         "Performed cyclical analysis using Google Analytics, SEMrush, and Ahrefs",
       ],
       skills: ["Analytics", "Communication", "Cascading Style Sheets (CSS)"],
-      color: "border-red-500/20 bg-red-900/10",
+      color: "border-red-500 bg-red-900/10",
     },
     {
       title: "Head of SEO",
@@ -145,7 +145,7 @@ export default function AboutPage() {
       location: "Global",
       description: "Provided SEO services for clients around the world, leading SEO strategy and implementation.",
       skills: ["E-commerce SEO", "Content Strategy", "Analytics", "Communication"],
-      color: "border-indigo-500/20 bg-indigo-900/10",
+      color: "border-indigo-500 bg-indigo-900/10",
     },
     {
       title: "SEO Specialist",
@@ -154,7 +154,7 @@ export default function AboutPage() {
       location: "Global",
       description: "Delivered SEO services for international clients across various industries.",
       skills: ["Preventive Maintenance", "Analytics"],
-      color: "border-pink-500/20 bg-pink-900/10",
+      color: "border-pink-500 bg-pink-900/10",
     },
   ]
 
@@ -234,14 +234,14 @@ export default function AboutPage() {
                   alt="Mykhailo Bielichenko - SEO Expert & Product Manager"
                   className="w-32 h-32 rounded-full border-4 border-purple-500/30 shadow-2xl"
                 />
-                <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-purple-500/20 to-pink-500/20"></div>
+                <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-purple-500 to-pink-500"></div>
               </div>
             </div>
           </div>
         </div>
 
         {/* Why This Platform */}
-        <Card className="bg-gradient-to-r from-purple-900/20 to-pink-900/20 border-purple-500/20 mb-12">
+        <Card className="bg-gradient-to-r from-purple-900 to-pink-900 border-purple-500 mb-12">
           <CardHeader>
             <CardTitle className="text-white text-2xl">Why I'm Building This Platform</CardTitle>
           </CardHeader>
