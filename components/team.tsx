@@ -9,7 +9,7 @@ export function Team() {
       fte: "0.5 FTE",
       skills: ["Cloudflare", "Terraform", "Vercel"],
       duration: "6 months (setup)",
-      cost: "$7k/mo",
+      cost: "$3k/mo",
       responsibilities: "Domain automation, CF Tunnel setup, infrastructure scaling",
     },
     {
@@ -17,7 +17,7 @@ export function Team() {
       fte: "1.0 FTE",
       skills: ["Next.js 14/15", "TypeScript", "System Design"],
       duration: "6 months",
-      cost: "$12k/mo",
+      cost: "$6k/mo",
       responsibilities: "Component library, Zod schemas, dynamic rendering system",
     },
     {
@@ -25,7 +25,7 @@ export function Team() {
       fte: "0.5 FTE",
       skills: ["LLM APIs", "Structured Output", "Zod"],
       duration: "6 months",
-      cost: "$8k/mo",
+      cost: "$4k/mo",
       responsibilities: "Template & content agents, structured output optimization",
     },
     {
@@ -33,7 +33,7 @@ export function Team() {
       fte: "0.5 FTE",
       skills: ["Playwright", "Jest", "Lighthouse CI"],
       duration: "4 months",
-      cost: "$5k/mo",
+      cost: "$3k/mo",
       responsibilities: "Component testing, performance monitoring, regression testing",
     },
     {
@@ -41,7 +41,7 @@ export function Team() {
       fte: "1.0 FTE",
       skills: ["Outreach", "PBN Operations", "SEO"],
       duration: "Ongoing",
-      cost: "$6k/mo",
+      cost: "$3k/mo",
       responsibilities: "Backlink acquisition, SERP monitoring, competitor analysis",
     },
   ]
