@@ -183,6 +183,32 @@ export function InvestmentAsk() {
                     </div>
                   </div>
 
+                  <div className="p-4 bg-blue-900/20 rounded-lg border border-blue-500/20">
+                    <h4 className="text-white font-semibold mb-3">Annual Revenue Calculation</h4>
+                    <div className="space-y-2 text-sm">
+                      <div className="flex justify-between">
+                        <span className="text-gray-300">Target sites by Month 12:</span>
+                        <span className="text-blue-300 font-semibold">100 sites</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-gray-300">Average revenue per site:</span>
+                        <span className="text-blue-300 font-semibold">$1,800/mo</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-gray-300">Monthly revenue (100 × $1,800):</span>
+                        <span className="text-blue-300 font-semibold">$180,000</span>
+                      </div>
+                      <div className="flex justify-between border-t border-blue-500/20 pt-2 mt-2">
+                        <span className="text-white font-semibold">Annual Revenue ($180K × 12):</span>
+                        <span className="text-blue-300 font-bold text-lg">$2.16M</span>
+                      </div>
+                    </div>
+                    <div className="mt-2 p-2 bg-blue-800/20 rounded text-xs text-blue-200">
+                      <strong>Note:</strong> Using higher-end revenue estimate ($1,800) for mature sites with
+                      established rankings
+                    </div>
+                  </div>
+
                   {/* Updated ROI calculation section */}
                   <div
                     id="roi-calculation"
@@ -248,7 +274,7 @@ export function InvestmentAsk() {
               <p className="text-gray-300 text-sm">Establish repo, CI, CF infra (2 weeks)</p>
             </div>
             <div className="p-6 bg-white/5 rounded-lg border border-white/10">
-              <div className="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold mx-auto mb-3">
+              <div className="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold mx-3">
                 3
               </div>
               <h4 className="text-white font-semibold mb-2">Deliver MVP Demo</h4>

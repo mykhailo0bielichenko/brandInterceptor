@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { ArrowRight, TrendingUp, Zap, ExternalLink } from "lucide-react"
+import { ArrowRight, TrendingUp, ExternalLink } from "lucide-react"
 
 export function Hero() {
   return (
@@ -36,7 +36,6 @@ export function Hero() {
             View Investment Deck
             <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
-
         </div>
 
         <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-3">
@@ -74,7 +73,7 @@ export function Hero() {
           </div>
           <div className="text-center">
             <a href="#roi-calculation" className="group">
-              <div className="text-3xl font-bold text-white group-hover:text-green-400 transition-colors">583%</div>
+              <div className="text-3xl font-bold text-white group-hover:text-green-400 transition-colors">1,253%</div>
               <div className="text-sm text-gray-400 group-hover:text-green-300 transition-colors">
                 Projected ROI Year 1
               </div>
