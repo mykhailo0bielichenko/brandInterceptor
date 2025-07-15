@@ -90,7 +90,7 @@ export function CalendlyScheduler() {
   }
 
   return (
-    <Card className="bg-gradient-to-r from-green-900/20 to-blue-900/20 border-green-500/20">
+    <Card className="bg-gradient-to-r from-green-900 to-blue-900 border-green-500">
       <CardHeader>
         <CardTitle className="text-white flex items-center gap-2">
           <Calendar className="h-5 w-5" />
@@ -110,7 +110,7 @@ export function CalendlyScheduler() {
       </CardHeader>
       <CardContent>
         {error && (
-          <div className="mb-6 p-4 bg-red-900/20 border border-red-500/20 rounded-lg">
+          <div className="mb-6 p-4 bg-red-900 border border-red-500 rounded-lg">
             <div className="flex items-center gap-2 text-red-300">
               <AlertCircle className="h-4 w-4" />
               <span className="text-sm">{error}</span>
@@ -130,7 +130,7 @@ export function CalendlyScheduler() {
                     )}
                   </div>
                   <Badge
-                    className="bg-blue-500/20 text-blue-300 border-blue-500/30"
+                    className="bg-blue-500 text-blue-300 border-blue-500/30"
                     style={{ backgroundColor: `${eventType.color}20`, borderColor: `${eventType.color}50` }}
                   >
                     <Clock className="w-3 h-3 mr-1" />
@@ -158,7 +158,7 @@ export function CalendlyScheduler() {
                     Discuss investment opportunity, review financial projections, and explore partnership terms
                   </p>
                 </div>
-                <Badge className="bg-blue-500/20 text-blue-300 border-blue-500/30">
+                <Badge className="bg-blue-500text-blue-300 border-blue-500">
                   <Clock className="w-3 h-3 mr-1" />
                   30 min
                 </Badge>
@@ -175,7 +175,7 @@ export function CalendlyScheduler() {
             </div>
           )}
 
-          <div className="mt-6 p-4 bg-purple-900/20 rounded-lg border border-purple-500/20">
+          <div className="mt-6 p-4 bg-purple-900 rounded-lg border border-purple-500">
             <div className="flex items-start gap-3">
               <User className="h-5 w-5 text-purple-300 mt-0.5" />
               <div>
