@@ -21,7 +21,7 @@ export function MarketOpportunity() {
         <div className="mb-16">
           <h3 className="text-2xl font-bold text-white mb-8 text-center">Revenue Model</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="bg-gradient-to-br from-green-900/20 to-blue-900/20 border-green-500/20">
+            <Card className="bg-gradient-to-br from-green-900to-blue-900 border-green-500">
               <CardHeader>
                 <CardTitle className="text-white flex items-center gap-2">
                   <TrendingUp className="h-5 w-5" />
@@ -45,7 +45,7 @@ export function MarketOpportunity() {
               </CardContent>
             </Card>
 
-            <Card className="bg-gradient-to-br from-purple-900/20 to-pink-900/20 border-purple-500/20">
+            <Card className="bg-gradient-to-br from-purple-900 to-pink-900 border-purple-500">
               <CardHeader>
                 <CardTitle className="text-white flex items-center gap-2">
                   <Target className="h-5 w-5" />
@@ -69,7 +69,7 @@ export function MarketOpportunity() {
               </CardContent>
             </Card>
 
-            <Card className="bg-gradient-to-br from-yellow-900/20 to-orange-900/20 border-yellow-500/20">
+            <Card className="bg-gradient-to-br from-yellow-900 to-orange-900 border-yellow-500">
               <CardHeader>
                 <CardTitle className="text-white flex items-center gap-2">
                   <DollarSign className="h-5 w-5" />
