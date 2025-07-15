@@ -57,7 +57,7 @@ export function Hero() {
             </div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-white">{"<5%"}</div>
+            <div className="text-3xl font-bold text-white">{"<35%"}</div>
             <div className="text-sm text-gray-400 mb-2">Invest in SEO Initially</div>
             <div className="text-xs text-gray-500">
               Source:{" "}
