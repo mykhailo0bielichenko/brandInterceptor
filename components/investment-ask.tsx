@@ -59,7 +59,6 @@ export function InvestmentAsk() {
           <p className="mt-4 text-lg text-gray-300">We seek USD 162k to fund the 6-month build & launch phase</p>
         </div>
 
-        {/* Financial Performance Chart */}
         
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
