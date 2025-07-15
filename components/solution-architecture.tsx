@@ -850,63 +850,6 @@ export function SolutionArchitecture() {
                       <strong>Runtime Guarantees:</strong> .safeParse() blocks any invalid JSON → system "never breaks"
                     </p>
                   </div>
-                  <div className="bg-black/30 p-3 rounded-lg">
-                    <p className="text-green-300 text-xs font-mono">Real AI-generated schema example:</p>
-                    <pre className="text-purple-300 text-xs mt-2 overflow-x-auto">
-                      {`import { z } from 'zod';
-
-// SUB-SCHEMA: A single piece of evidence from first-hand testing. This is the core of the "Experience" pillar of E-E-A-T.
-const testingEvidenceSchema = z.object({
-    media_type: z.enum(['image', 'video', 'quote']).describe('The type of evidence. "Image" for screenshots, "Video" for screen recordings, "Quote" for direct text from support chats.'),
-    url: z.string().url().optional().describe('Direct URL to the original media file (for images/videos).'),
-    content: z.string().optional().describe('The direct text content for a quote from a support chat or a key term from the T&Cs.'),
-    caption: z.string().describe('Writer Guidance: This is crucial for building trust. The caption must provide context and prove authenticity. E.g., "Screenshot of our 5,000 kr withdrawal request to Revolut, timestamped July 15, 2025." or "Direct quote from our live chat test where the agent confirmed the bonus was non-sticky."'),
-    testing_expert: z.string().describe('The name of the expert who performed this specific test, linking back to their profile.'),
-});
-
-// SUB-SCHEMA: A deep-dive justification for a single ranking criterion.
-const justificationCriterionSchema = z.object({
-    criterion_name: z.string().describe('The specific factor being evaluated, e.g., "Bonus Fairness & Value," "Payout Speed & Reliability," "Quality of Norwegian Customer Support."'),
-    expert_rating: z.number().min(0).max(10).describe('A score out of 10 for this specific criterion, assigned by your expert.'),
-    analysis_summary: z.string().describe('Writer Guidance: A concise, data-driven summary. Avoid vague terms. Instead of "good bonus," write "Offers a true No-Sticky bonus with a fair 35x wagering requirement on the bonus amount only." Instead of "fast payouts," write "Our test withdrawal was processed and received in 18 hours."'),
-    comparative_note: z.string().describe('Writer Guidance: This is key for justification. Directly compare this casino to the one ranked below it on this specific criterion. E.g., "This beats [Casino #2], which, while offering a larger bonus percentage, has a higher 40x (Deposit + Bonus) wagering requirement, making it significantly harder for players to cash out."'),
-    evidence: z.array(testingEvidenceSchema).describe('An array of tangible proof points. This is non-negotiable for demonstrating E-E-A-T. Include screenshots of bonus terms, withdrawal confirmations, or chat logs.'),
-});
-
-// SUB-SCHEMA: The full, detailed justification for a single ranked casino.
-const rankedCasinoJustificationSchema = z.object({
-    rank: z.number().int().positive().describe('The casino\'s rank in the list (e.g., 1, 2, 3).'),
-    casino_name: z.string(),
-    logo_url: z.string().url(),
-    
-    // The "TL;DR" expert verdict.
-    overall_verdict_summary: z.string().describe('Writer Guidance: A powerful, concise paragraph summarizing why this casino earned its specific rank. This should be the "elevator pitch" for its position. E.g., "FjordSpill secures the #1 spot due to its unmatched combination of player-friendly bonus terms, verified sub-24-hour withdrawal speeds, and outstanding Norwegian-language customer support, which our team tested extensively across multiple interactions."'),
-    
-    // The deep-dive analysis.
-    justification_criteria: z.array(justificationCriterionSchema).min(3).describe('A detailed breakdown of the core reasons for the ranking. Focus on the most critical YMYL factors: Bonus Fairness, Payout Reliability, and Customer Support.'),
-    
-    // The final word from your expert.
-    final_expert_takeaway: z.object({
-        expert_name: z.string().describe('The name of the primary expert providing the final verdict, e.g., "Anders Høyer Berg".'),
-        takeaway: z.string().describe('Writer Guidance: A concluding paragraph from the expert. Frame it as direct advice to a specific type of player. E.g., "For players who value fair terms and the security of knowing they can access their winnings quickly, FjordSpill is, in my professional opinion, the most reliable choice on the Norwegian market today."'),
-    }),
-});
-
-// THE MASTER SCHEMA for the new section.
-export const detailedRankingJustificationSectionSchema = z.object({
-    // Section-level E-E-A-T and context.
-    headline: z.string().describe('The main H2 headline for this new section, e.g., "Why These Casinos Made Our Top 3: A Deep-Dive Analysis".'),
-    intro_text: z.string().describe('Writer Guidance: Explain the purpose of this section. State that you are going beyond simple ratings to provide a transparent, evidence-based breakdown of why each casino earned its spot. Mention the rigorous, real-money testing process and introduce the named experts who conducted the analysis.'),
-    methodology_link: z.string().url().describe('A link to your full "How We Test" or "Our Methodology" page to reinforce transparency and authoritativeness.'),
-    
-    // The array of ranked casino justifications.
-    ranked_casinos: z.array(rankedCasinoJustificationSchema).describe('An array containing the detailed justifications for your top 3-5 casinos. The order in this array should reflect the ranking.'),
-});
-
-export type DetailedRankingJustificationSection = z.infer<typeof detailedRankingJustificationSectionSchema>;
-`}
-                    </pre>
-                  </div>
                 </div>
               </CardContent>
             </Card>
@@ -944,7 +887,7 @@ export type DetailedRankingJustificationSection = z.infer<typeof detailedRanking
         {/* DevOps Automation */}
         <div>
           <h3 className="text-2xl font-bold text-white mb-8 text-center">3.3 DevOps Automation</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <Card className="bg-white/5 border-white/10">
               <CardHeader>
                 <CardTitle className="text-white flex items-center gap-2">
@@ -960,17 +903,6 @@ export type DetailedRankingJustificationSection = z.infer<typeof detailedRanking
               </CardContent>
             </Card>
 
-            <Card className="bg-white/5 border-white/10">
-              <CardHeader>
-                <CardTitle className="text-white flex items-center gap-2">
-                  <Shield className="h-5 w-5" />
-                  Terraform Module
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-300 text-sm">CF Tunnel + Access, WAF rules, secret rotation</p>
-              </CardContent>
-            </Card>
 
             <Card className="bg-white/5 border-white/10">
               <CardHeader>

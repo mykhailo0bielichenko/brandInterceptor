@@ -66,7 +66,7 @@ export function Footer() {
 
         <div className="border-t border-white/10 mt-8 pt-8 text-center">
           <p className="text-gray-400 text-sm">
-            © 2025 SEO Traffic Intercept Platform. Founded by Mykhailo Bielichenko. Prepared July 15, 2025.
+            © 2025 SEO Traffic Intercept Platform. Founded by Mykhailo Bielichenko. Prepared January 15, 2025.
           </p>
         </div>
       </div>
