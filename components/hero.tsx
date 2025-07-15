@@ -29,9 +29,9 @@ export function Hero() {
           </Badge>
 
           <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl">
-            Capture New Brands Traffic
+            Capture Traffic of New Brands 
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
-              Before Brand Owners
+             Before the Owners of Those Brands
             </span>
           </h1>
 
