@@ -120,7 +120,7 @@ export function Team() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-          <Card className="bg-gradient-to-r from-purple-900/20 to-pink-900/20 border-purple-500/20">
+          <Card className="bg-gradient-to-r from-purple-900 to-pink-900 border-purple-500">
             <CardHeader>
               <CardTitle className="text-white flex items-center gap-2">
                 <DollarSign className="h-5 w-5" />
@@ -147,7 +147,7 @@ export function Team() {
                     <span className="text-purple-300 font-bold text-lg">$46,000</span>
                   </div>
                 </div>
-                <div className="mt-4 p-3 bg-green-900/20 rounded-lg border border-green-500/20">
+                <div className="mt-4 p-3 bg-green-900 rounded-lg border border-green-500 ">
                   <p className="text-green-300 text-sm">
                     <strong>Budget estimate:</strong> ≈ USD 46k/mo for first 6 months (salaries + tooling + links)
                   </p>
