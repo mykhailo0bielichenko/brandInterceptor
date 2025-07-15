@@ -1,25 +1,25 @@
 import { Hero } from "@/components/hero"
-import{ FeaturedGames} from "@/components/featured-games"
-import{ LiveStats} from "@/components/live-stats"
-import { Promotions} from "@/components/promotions"
-import{ CasinoGamesGuide} from "@/components/seo/casino-games-guide"
-import{ CasinoExperienceContent} from "@/components/seo/casino-experience-content"
-import { CasinoBonusesOverview } from "@/components/seo/casino-bonuses-overview"
-import {  CasinoReviewsTestimonials } from "@/components/seo/casino-reviews-testimonials"
-import CasinoFaqSeo from "@/components/seo/casino-faq-seo"
+import { ExecutiveSummary } from "@/components/executive-summary"
+import { MarketOpportunity } from "@/components/market-opportunity"
+import { DataFlowSection } from "@/components/data-flow-section"
+import { SolutionArchitecture } from "@/components/solution-architecture"
+import { Roadmap } from "@/components/roadmap"
+import { Team } from "@/components/team"
+import { InvestmentAsk } from "@/components/investment-ask"
+import { Footer } from "@/components/footer"
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gray-900">
+    <main className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <Hero />
-      <FeaturedGames />
-      <LiveStats />
-      <Promotions />
-      <CasinoGamesGuide />
-      <CasinoExperienceContent />
-      <CasinoBonusesOverview />
-      <CasinoReviewsTestimonials />
-      <CasinoFaqSeo />
+      <ExecutiveSummary />
+      <MarketOpportunity />
+      <DataFlowSection />
+      <SolutionArchitecture />
+      <Roadmap />
+      <Team />
+      <InvestmentAsk />
+      <Footer />
     </main>
   )
 }
