@@ -21,7 +21,7 @@ export function Footer() {
   return (
     <footer className="bg-black/40 border-t border-white/10 py-12 px-6 lg:px-8">
       <div className="mx-auto max-w-7xl">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
             <h3 className="text-white font-bold text-lg mb-4">SEO Traffic Intercept Platform</h3>
             <p className="text-gray-400 text-sm mb-4">
@@ -67,34 +67,7 @@ export function Footer() {
             </div>
           </div>
 
-          <div>
-            <h4 className="text-white font-semibold mb-4">Documentation</h4>
-            <div className="space-y-2 text-sm text-gray-400">
-              <button
-                className="block cursor-pointer hover:text-white transition-colors text-left"
-                onClick={() => scrollToSection("solution-architecture")}
-              >
-                Technical Architecture
-              </button>
-              <button
-                className="block cursor-pointer hover:text-white transition-colors text-left"
-                onClick={() => scrollToSection("investment-ask")}
-              >
-                Financial Projections
-              </button>
-              <button
-                className="block cursor-pointer hover:text-white transition-colors text-left"
-                onClick={() => scrollToSection("market-opportunity")}
-              >
-                Risk Assessment
-              </button>
-              <button
-                className="block cursor-pointer hover:text-white transition-colors text-left"
-                onClick={() => scrollToSection("team")}
-              >
-                Team Profiles
-              </button>
-            </div>
+          
           </div>
         </div>
 
