@@ -68,7 +68,7 @@ export function Hero() {
             <Card className="bg-white/10 border-white/20 backdrop-blur-sm">
               <CardContent className="p-6 text-center">
                 <div className="flex items-center justify-center gap-2 mb-2">
-                  <div className="text-3xl font-bold text-white">{"<5%"}</div>
+                  <div className="text-3xl font-bold text-white">{"<35%"}</div>
                   <Tooltip>
                     <TooltipTrigger asChild>
                       <button onClick={openChatGPTReport} className="text-gray-400 hover:text-white transition-colors">
