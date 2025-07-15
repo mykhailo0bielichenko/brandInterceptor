@@ -850,6 +850,139 @@ export function SolutionArchitecture() {
                       <strong>Runtime Guarantees:</strong> .safeParse() blocks any invalid JSON → system "never breaks"
                     </p>
                   </div>
+                  <div className="bg-black/30 p-3 rounded-lg">
+                    <p className="text-green-300 text-xs font-mono">Real AI-generated template for "ck444" brand:</p>
+                    <pre className="text-purple-300 text-xs mt-2 overflow-x-auto">
+                      {`{
+  "page": "/review",
+  "brand": "CK444",
+  "layout": "casino-review",
+  "seoMeta": {
+    "title": "CK444 Casino Review 2025 - Bonuses, Games & Expert Analysis",
+    "description": "Complete CK444 casino review with exclusive bonuses, game selection, payment methods and expert ratings. Join today for 500% welcome bonus.",
+    "keywords": ["ck444", "ck444 casino", "ck444 review", "ck444 bonus"]
+  },
+  "components": [
+    {
+      "key": "HEADER",
+      "props": {
+        "title": "CK444 Casino Review",
+        "subtitle": "Expert Analysis & Exclusive Bonuses",
+        "logo": "/logos/ck444-logo.png",
+        "navigation": ["Games", "Bonuses", "Banking", "Support"]
+      }
+    },
+    {
+      "key": "HERO",
+      "props": {
+        "title": "CK444 Casino - The Ultimate Gaming Experience",
+        "subtitle": "Join thousands of players winning big at CK444",
+        "backgroundImage": "/hero/ck444-hero.jpg",
+        "ctaText": "Claim 500% Bonus",
+        "ctaUrl": "/visit-ck444",
+        "trustBadges": ["licensed", "ssl-secured", "fair-play"]
+      }
+    },
+    {
+      "key": "BONUS_CARD",
+      "props": {
+        "bonus": 500,
+        "currency": "USD",
+        "wager": 40,
+        "minDeposit": 20,
+        "ctaUrl": "/visit-ck444",
+        "terms": ["18+ only", "New players only", "40x wagering"],
+        "validUntil": "2025-02-28",
+        "bonusCode": "WELCOME500"
+      }
+    },
+    {
+      "key": "GAME_GRID",
+      "props": {
+        "games": [
+          {
+            "name": "Starburst",
+            "provider": "NetEnt",
+            "rtp": 96.1,
+            "volatility": "low",
+            "thumbnail": "/games/starburst.jpg"
+          },
+          {
+            "name": "Book of Dead",
+            "provider": "Play'n GO", 
+            "rtp": 94.25,
+            "volatility": "high",
+            "thumbnail": "/games/book-of-dead.jpg"
+          }
+        ],
+        "filterOptions": ["provider", "rtp", "volatility"],
+        "sortBy": "popularity"
+      }
+    },
+    {
+      "key": "PROS_CONS",
+      "props": {
+        "pros": [
+          "Massive 500% welcome bonus",
+          "2000+ games from top providers",
+          "Fast withdrawals (24-48 hours)",
+          "24/7 live chat support",
+          "Mobile-optimized platform"
+        ],
+        "cons": [
+          "High 40x wagering requirement",
+          "Limited live dealer games",
+          "No phone support available"
+        ],
+        "overallRating": 8.5
+      }
+    },
+    {
+      "key": "PAYMENT_METHODS",
+      "props": {
+        "methods": [
+          {
+            "name": "Visa",
+            "type": "credit_card",
+            "minDeposit": 20,
+            "maxDeposit": 5000,
+            "processingTime": "instant"
+          },
+          {
+            "name": "Bitcoin",
+            "type": "crypto",
+            "minDeposit": 0.001,
+            "maxDeposit": 10,
+            "processingTime": "15 minutes"
+          }
+        ],
+        "currencies": ["USD", "EUR", "BTC"],
+        "fees": "No deposit fees"
+      }
+    },
+    {
+      "key": "FAQ",
+      "props": {
+        "categories": ["bonuses", "games", "payments", "account"],
+        "items": [
+          {
+            "question": "How do I claim the 500% welcome bonus?",
+            "answer": "Register a new account, make your first deposit of $20+, and the bonus will be automatically credited.",
+            "category": "bonuses"
+          },
+          {
+            "question": "What games contribute to wagering requirements?",
+            "answer": "Slots contribute 100%, table games 10%, live dealer games 5%.",
+            "category": "bonuses"
+          }
+        ],
+        "searchable": true
+      }
+    }
+  ]
+}`}
+                    </pre>
+                  </div>
                 </div>
               </CardContent>
             </Card>
