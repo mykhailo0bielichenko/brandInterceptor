@@ -31,7 +31,7 @@ export function InvestmentAsk() {
                   </div>
                   <div className="text-center p-4 bg-white/5 rounded-lg">
                     <Target className="h-6 w-6 text-green-400 mx-auto mb-2" />
-                    <div className="text-2xl font-bold text-white">9</div>
+                    <div className="text-2xl font-bold text-white">6</div>
                     <div className="text-sm text-gray-300">Month Break-even</div>
                   </div>
                 </div>
@@ -75,9 +75,9 @@ export function InvestmentAsk() {
                       <div className="text-purple-300 font-semibold">$15,000</div>
                     </div>
                     <div className="text-center p-3 bg-blue-900/20 rounded-lg">
-                      <div className="text-lg font-bold text-white">Month 9</div>
+                      <div className="text-lg font-bold text-white">Month 6</div>
                       <div className="text-sm text-gray-300">Break-even</div>
-                      <div className="text-blue-300 font-semibold">$46,000</div>
+                      <div className="text-blue-300 font-semibold">$11,000</div>
                     </div>
                   </div>
                   <div className="text-center p-4 bg-green-900/20 rounded-lg border border-green-500/20">
@@ -85,6 +85,40 @@ export function InvestmentAsk() {
                     <div className="text-sm text-gray-300 mb-1">Target Monthly Revenue</div>
                     <div className="text-green-300 font-bold text-2xl">$180,000</div>
                     <div className="text-xs text-gray-400 mt-1">Based on 100 active sites</div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white/5 border-white/10">
+              <CardHeader>
+                <CardTitle className="text-white flex items-center gap-2">
+                  <TrendingUp className="h-5 w-5" />
+                  Ongoing Operating Costs (Post-Launch)
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-3">
+                  <div className="flex justify-between items-center p-3 bg-white/5 rounded">
+                    <span className="text-gray-300">Link-building Manager</span>
+                    <span className="text-white font-semibold">$3,000/mo</span>
+                  </div>
+                  <div className="flex justify-between items-center p-3 bg-white/5 rounded">
+                    <span className="text-gray-300">Infrastructure & Tools</span>
+                    <span className="text-white font-semibold">$3,000/mo</span>
+                  </div>
+                  <div className="flex justify-between items-center p-3 bg-white/5 rounded">
+                    <span className="text-gray-300">Link Acquisition</span>
+                    <span className="text-white font-semibold">$5,000/mo</span>
+                  </div>
+                  <div className="border-t border-white/10 pt-3">
+                    <div className="flex justify-between items-center">
+                      <span className="text-white font-semibold">Total Monthly (Ongoing)</span>
+                      <span className="text-green-400 font-bold text-lg">$11,000</span>
+                    </div>
+                  </div>
+                  <div className="mt-2 p-2 bg-blue-900/20 rounded text-xs text-blue-300">
+                    <strong>Note:</strong> Development team contracts end after 6 months
                   </div>
                 </div>
               </CardContent>
@@ -149,7 +183,7 @@ export function InvestmentAsk() {
                     </div>
                   </div>
 
-                  {/* Added ID for ROI calculation section */}
+                  {/* Updated ROI calculation section */}
                   <div
                     id="roi-calculation"
                     className="p-4 bg-yellow-900/20 rounded-lg border border-yellow-500/20 scroll-mt-24"
@@ -162,20 +196,24 @@ export function InvestmentAsk() {
                       </div>
                       <div className="flex justify-between">
                         <span className="text-gray-300">Annual Operating Costs:</span>
-                        <span className="text-yellow-300 font-bold">$324K</span>
+                        <span className="text-yellow-300 font-bold">$132K</span>
                       </div>
                       <div className="flex justify-between">
                         <span className="text-gray-300">Net Annual Profit:</span>
-                        <span className="text-yellow-300 font-bold">$1.84M</span>
+                        <span className="text-yellow-300 font-bold">$2.03M</span>
                       </div>
                       <div className="flex justify-between border-t border-yellow-500/20 pt-2 mt-2">
                         <span className="text-white font-semibold">ROI on Investment:</span>
-                        <span className="text-yellow-300 font-bold text-lg">1,135%</span>
+                        <span className="text-yellow-300 font-bold text-lg">1,253%</span>
                       </div>
                     </div>
                     <div className="mt-3 pt-3 border-t border-yellow-500/20">
                       <div className="text-xs text-gray-400">
-                        <strong>Calculation:</strong> ($1.84M profit / $162K investment) × 100 = 1,135% ROI
+                        <strong>Calculation:</strong> ($2.03M profit / $162K investment) × 100 = 1,253% ROI
+                      </div>
+                      <div className="text-xs text-gray-400 mt-1">
+                        <strong>Operating costs:</strong> $11K/mo ongoing (Link-builder $3K + Infrastructure $3K + Links
+                        $5K)
                       </div>
                       <div className="text-xs text-gray-400 mt-1">
                         <strong>Sources:</strong> Based on Ahrefs traffic valuation, industry average conversion rates,
