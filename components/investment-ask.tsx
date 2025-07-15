@@ -10,7 +10,7 @@ export function InvestmentAsk() {
       <div className="mx-auto max-w-7xl">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold text-white sm:text-4xl">Investment Ask</h2>
-          <p className="mt-4 text-lg text-gray-300">We seek USD 276k to fund the 6-month build & launch phase</p>
+          <p className="mt-4 text-lg text-gray-300">We seek USD 162k to fund the 6-month build & launch phase</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
@@ -19,7 +19,7 @@ export function InvestmentAsk() {
               <CardHeader>
                 <CardTitle className="text-white text-2xl flex items-center gap-3">
                   <DollarSign className="h-8 w-8 text-green-400" />
-                  $276,000 Investment Breakdown
+                  $162,000 Investment Breakdown
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
@@ -39,7 +39,7 @@ export function InvestmentAsk() {
                 <div className="space-y-3">
                   <div className="flex justify-between items-center p-3 bg-white/5 rounded">
                     <span className="text-gray-300">Staff & Development (6 months)</span>
-                    <span className="text-white font-semibold">$228,000</span>
+                    <span className="text-white font-semibold">$114,000</span>
                   </div>
                   <div className="flex justify-between items-center p-3 bg-white/5 rounded">
                     <span className="text-gray-300">Infrastructure & Tools</span>
@@ -52,7 +52,7 @@ export function InvestmentAsk() {
                   <div className="border-t border-white/10 pt-3">
                     <div className="flex justify-between items-center">
                       <span className="text-white font-semibold text-lg">Total Investment</span>
-                      <span className="text-green-400 font-bold text-2xl">$276,000</span>
+                      <span className="text-green-400 font-bold text-2xl">$162,000</span>
                     </div>
                   </div>
                 </div>
@@ -162,20 +162,20 @@ export function InvestmentAsk() {
                       </div>
                       <div className="flex justify-between">
                         <span className="text-gray-300">Annual Operating Costs:</span>
-                        <span className="text-yellow-300 font-bold">$552K</span>
+                        <span className="text-yellow-300 font-bold">$324K</span>
                       </div>
                       <div className="flex justify-between">
                         <span className="text-gray-300">Net Annual Profit:</span>
-                        <span className="text-yellow-300 font-bold">$1.61M</span>
+                        <span className="text-yellow-300 font-bold">$1.84M</span>
                       </div>
                       <div className="flex justify-between border-t border-yellow-500/20 pt-2 mt-2">
                         <span className="text-white font-semibold">ROI on Investment:</span>
-                        <span className="text-yellow-300 font-bold text-lg">583%</span>
+                        <span className="text-yellow-300 font-bold text-lg">1,135%</span>
                       </div>
                     </div>
                     <div className="mt-3 pt-3 border-t border-yellow-500/20">
                       <div className="text-xs text-gray-400">
-                        <strong>Calculation:</strong> ($1.61M profit / $276K investment) × 100 = 583% ROI
+                        <strong>Calculation:</strong> ($1.84M profit / $162K investment) × 100 = 1,135% ROI
                       </div>
                       <div className="text-xs text-gray-400 mt-1">
                         <strong>Sources:</strong> Based on Ahrefs traffic valuation, industry average conversion rates,

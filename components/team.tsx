@@ -69,7 +69,7 @@ export function Team() {
     },
   ]
 
-  const totalMonthlyCost = 38000
+  const totalMonthlyCost = 19000 // Updated from 38000 based on new salaries: 3k + 6k + 4k + 3k + 3k = 19k
 
   return (
     <section className="py-24 px-6 lg:px-8">
@@ -144,12 +144,12 @@ export function Team() {
                 <div className="border-t border-white/10 pt-3">
                   <div className="flex justify-between items-center">
                     <span className="text-white font-semibold">Total Monthly</span>
-                    <span className="text-purple-300 font-bold text-lg">$46,000</span>
+                    <span className="text-purple-300 font-bold text-lg">$27,000</span>
                   </div>
                 </div>
                 <div className="mt-4 p-3 bg-green-900 rounded-lg border border-green-500">
                   <p className="text-green-300 text-sm">
-                    <strong>Budget estimate:</strong> ≈ USD 46k/mo for first 6 months (salaries + tooling + links)
+                    <strong>Budget estimate:</strong> ≈ USD 27k/mo for first 6 months (salaries + tooling + links)
                   </p>
                 </div>
               </div>
