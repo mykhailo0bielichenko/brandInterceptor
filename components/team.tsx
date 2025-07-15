@@ -147,7 +147,7 @@ export function Team() {
                     <span className="text-purple-300 font-bold text-lg">$46,000</span>
                   </div>
                 </div>
-                <div className="mt-4 p-3 bg-green-900 rounded-lg border border-green-500 ">
+                <div className="mt-4 p-3 bg-green-900 rounded-lg border border-green-500">
                   <p className="text-green-300 text-sm">
                     <strong>Budget estimate:</strong> ≈ USD 46k/mo for first 6 months (salaries + tooling + links)
                   </p>
