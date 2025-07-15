@@ -16,7 +16,7 @@ import {
 } from "recharts"
 
 export function InvestmentAsk() {
-  // Updated realistic first-year revenue progression
+  // Updated realistic first-year revenue progression with cumulative calculations
   const monthlyData = [
     { month: 1, sites: 0, revenue: 0, costs: 27000, profit: -27000, cumulative: -27000 },
     { month: 2, sites: 0, revenue: 0, costs: 27000, profit: -27000, cumulative: -54000 },
@@ -38,10 +38,11 @@ export function InvestmentAsk() {
     { month: 13, sites: 350, revenue: 84000, costs: 11000, profit: 73000, cumulative: 49500 },
     { month: 14, sites: 400, revenue: 96000, costs: 11000, profit: 85000, cumulative: 134500 },
     { month: 15, sites: 450, revenue: 108000, costs: 11000, profit: 97000, cumulative: 231500 },
+    { month: 16, sites: 500, revenue: 120000, costs: 11000, profit: 109000, cumulative: 340500 },
   ]
 
-  const totalFirstYearRevenue = monthlyData.slice(4).reduce((sum, month) => sum + month.revenue, 0) // Months 5-12
-  const totalOperatingCosts = 11000 * 8 // 8 months of operating costs (May-Dec)
+  const totalFirstYearRevenue = monthlyData.slice(4).reduce((sum, month) => sum + month.revenue, 0)
+  const totalOperatingCosts = 11000 * 8
   const firstYearProfit = totalFirstYearRevenue - totalOperatingCosts
   const firstYearROI = Math.round((firstYearProfit / 162000) * 100)
 
@@ -78,32 +79,62 @@ export function InvestmentAsk() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <ChartContainer config={chartConfig} className="h-[400px]">
+              <ChartContainer config={chartConfig} className="h-[500px]">
                 <ResponsiveContainer width="100%" height="100%">
                   <LineChart data={extendedData} margin={{ top: 20, right: 30, left: 20, bottom: 20 }}>
                     <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.1)" />
-                    <XAxis dataKey="month" stroke="rgba(255,255,255,0.7)" tick={{ fill: "rgba(255,255,255,0.7)" }} />
+                    <XAxis
+                      dataKey="month"
+                      stroke="rgba(255,255,255,0.7)"
+                      tick={{ fill: "rgba(255,255,255,0.7)" }}
+                      label={{ value: "Month", position: "insideBottom", offset: -10, fill: "rgba(255,255,255,0.7)" }}
+                    />
                     <YAxis
                       stroke="rgba(255,255,255,0.7)"
                       tick={{ fill: "rgba(255,255,255,0.7)" }}
                       tickFormatter={(value) => `$${(value / 1000).toFixed(0)}K`}
+                      label={{ value: "Amount ($)", angle: -90, position: "insideLeft", fill: "rgba(255,255,255,0.7)" }}
                     />
                     <ChartTooltip
                       content={<ChartTooltipContent />}
                       formatter={(value, name) => [
                         `$${(value as number).toLocaleString()}`,
-                        name === "revenue" ? "Revenue" : name === "costs" ? "Operating Costs" : "Cumulative Profit",
+                        name === "revenue"
+                          ? "Monthly Revenue"
+                          : name === "costs"
+                            ? "Operating Costs"
+                            : "Cumulative Profit",
                       ]}
+                      labelFormatter={(label) => `Month ${label}`}
                     />
 
-                    {/* Break-even line */}
+                    {/* Break-even reference line */}
                     <ReferenceLine y={0} stroke="rgba(255,255,255,0.5)" strokeDasharray="5 5" />
 
-                    {/* Break-even point marker */}
-                    <ReferenceDot x={8} y={13500} r={6} fill="#10b981" stroke="#ffffff" strokeWidth={2} />
+                    {/* Break-even point marker (Month 8) */}
+                    <ReferenceDot
+                      x={8}
+                      y={13500}
+                      r={8}
+                      fill="#10b981"
+                      stroke="#ffffff"
+                      strokeWidth={3}
+                      label={{ value: "Break-even", position: "top", fill: "#10b981", fontSize: 12 }}
+                    />
 
-                    {/* Full ROI point marker */}
-                    <ReferenceDot x={13} y={84000} r={6} fill="#8b5cf6" stroke="#ffffff" strokeWidth={2} />
+                    {/* Full ROI point marker (Month 13) */}
+                    <ReferenceDot
+                      x={13}
+                      y={84000}
+                      r={8}
+                      fill="#8b5cf6"
+                      stroke="#ffffff"
+                      strokeWidth={3}
+                      label={{ value: "Full ROI", position: "top", fill: "#8b5cf6", fontSize: 12 }}
+                    />
+
+                    {/* Investment recovery line */}
+                    <ReferenceLine y={162000} stroke="rgba(139, 92, 246, 0.5)" strokeDasharray="8 4" />
 
                     <Line
                       type="monotone"
@@ -133,27 +164,34 @@ export function InvestmentAsk() {
                 </ResponsiveContainer>
               </ChartContainer>
 
-              {/* Chart Legend */}
-              <div className="mt-4 flex flex-wrap justify-center gap-6 text-sm">
-                <div className="flex items-center gap-2">
-                  <div className="w-4 h-4 bg-green-600 rounded"></div>
-                  <span className="text-white">Monthly Revenue</span>
+              {/* Chart Legend and Key Points */}
+              <div className="mt-6 space-y-4">
+                <div className="flex flex-wrap justify-center gap-6 text-sm">
+                  <div className="flex items-center gap-2">
+                    <div className="w-4 h-4 bg-green-600 rounded"></div>
+                    <span className="text-white">Monthly Revenue</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-4 h-4 bg-red-600 rounded"></div>
+                    <span className="text-white">Operating Costs</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-4 h-4 bg-blue-600 rounded"></div>
+                    <span className="text-white">Cumulative Profit</span>
+                  </div>
                 </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-4 h-4 bg-red-600 rounded"></div>
-                  <span className="text-white">Operating Costs</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-4 h-4 bg-blue-600 rounded"></div>
-                  <span className="text-white">Cumulative Profit</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                  <span className="text-white">Break-even (Month 8)</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 bg-purple-500 rounded-full"></div>
-                  <span className="text-white">Full ROI (Month 13)</span>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                  <div className="flex items-center justify-center gap-2 p-3 bg-green-900/20 rounded-lg border border-green-500/20">
+                    <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                    <span className="text-white text-sm">
+                      Break-even Point: Month 8 ($13.5K revenue &gt; $11K costs)
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-center gap-2 p-3 bg-purple-900/20 rounded-lg border border-purple-500/20">
+                    <div className="w-3 h-3 bg-purple-500 rounded-full"></div>
+                    <span className="text-white text-sm">Full ROI Recovery: Month 13 (Cumulative profit = $162K)</span>
+                  </div>
                 </div>
               </div>
             </CardContent>
@@ -348,7 +386,6 @@ export function InvestmentAsk() {
                     </div>
                   </div>
 
-                  {/* Updated ROI calculation section */}
                   <div
                     id="roi-calculation"
                     className="p-4 bg-yellow-900/20 rounded-lg border border-yellow-500/20 scroll-mt-24"
@@ -388,7 +425,6 @@ export function InvestmentAsk() {
               </CardContent>
             </Card>
 
-            {/* Integrated Calendly Scheduler */}
             <CalendlyScheduler />
           </div>
         </div>
