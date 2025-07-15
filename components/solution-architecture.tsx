@@ -851,136 +851,205 @@ export function SolutionArchitecture() {
                     </p>
                   </div>
                   <div className="bg-black/30 p-3 rounded-lg">
-                    <p className="text-green-300 text-xs font-mono">Real AI-generated template for "ck444" brand:</p>
+                    <p className="text-green-300 text-xs font-mono">Real AI-generated content schema "ck444" brand:</p>
                     <pre className="text-purple-300 text-xs mt-2 overflow-x-auto">
-                      {`{
-  "page": "/review",
-  "brand": "CK444",
-  "layout": "casino-review",
-  "seoMeta": {
-    "title": "CK444 Casino Review 2025 - Bonuses, Games & Expert Analysis",
-    "description": "Complete CK444 casino review with exclusive bonuses, game selection, payment methods and expert ratings. Join today for 500% welcome bonus.",
-    "keywords": ["ck444", "ck444 casino", "ck444 review", "ck444 bonus"]
-  },
-  "components": [
-    {
-      "key": "HEADER",
-      "props": {
-        "title": "CK444 Casino Review",
-        "subtitle": "Expert Analysis & Exclusive Bonuses",
-        "logo": "/logos/ck444-logo.png",
-        "navigation": ["Games", "Bonuses", "Banking", "Support"]
-      }
-    },
-    {
-      "key": "HERO",
-      "props": {
-        "title": "CK444 Casino - The Ultimate Gaming Experience",
-        "subtitle": "Join thousands of players winning big at CK444",
-        "backgroundImage": "/hero/ck444-hero.jpg",
-        "ctaText": "Claim 500% Bonus",
-        "ctaUrl": "/visit-ck444",
-        "trustBadges": ["licensed", "ssl-secured", "fair-play"]
-      }
-    },
-    {
-      "key": "BONUS_CARD",
-      "props": {
-        "bonus": 500,
-        "currency": "USD",
-        "wager": 40,
-        "minDeposit": 20,
-        "ctaUrl": "/visit-ck444",
-        "terms": ["18+ only", "New players only", "40x wagering"],
-        "validUntil": "2025-02-28",
-        "bonusCode": "WELCOME500"
-      }
-    },
-    {
-      "key": "GAME_GRID",
-      "props": {
-        "games": [
-          {
-            "name": "Starburst",
-            "provider": "NetEnt",
-            "rtp": 96.1,
-            "volatility": "low",
-            "thumbnail": "/games/starburst.jpg"
-          },
-          {
-            "name": "Book of Dead",
-            "provider": "Play'n GO", 
-            "rtp": 94.25,
-            "volatility": "high",
-            "thumbnail": "/games/book-of-dead.jpg"
-          }
-        ],
-        "filterOptions": ["provider", "rtp", "volatility"],
-        "sortBy": "popularity"
-      }
-    },
-    {
-      "key": "PROS_CONS",
-      "props": {
-        "pros": [
-          "Massive 500% welcome bonus",
-          "2000+ games from top providers",
-          "Fast withdrawals (24-48 hours)",
-          "24/7 live chat support",
-          "Mobile-optimized platform"
-        ],
-        "cons": [
-          "High 40x wagering requirement",
-          "Limited live dealer games",
-          "No phone support available"
-        ],
-        "overallRating": 8.5
-      }
-    },
-    {
-      "key": "PAYMENT_METHODS",
-      "props": {
-        "methods": [
-          {
-            "name": "Visa",
-            "type": "credit_card",
-            "minDeposit": 20,
-            "maxDeposit": 5000,
-            "processingTime": "instant"
-          },
-          {
-            "name": "Bitcoin",
-            "type": "crypto",
-            "minDeposit": 0.001,
-            "maxDeposit": 10,
-            "processingTime": "15 minutes"
-          }
-        ],
-        "currencies": ["USD", "EUR", "BTC"],
-        "fees": "No deposit fees"
-      }
-    },
-    {
-      "key": "FAQ",
-      "props": {
-        "categories": ["bonuses", "games", "payments", "account"],
-        "items": [
-          {
-            "question": "How do I claim the 500% welcome bonus?",
-            "answer": "Register a new account, make your first deposit of $20+, and the bonus will be automatically credited.",
-            "category": "bonuses"
-          },
-          {
-            "question": "What games contribute to wagering requirements?",
-            "answer": "Slots contribute 100%, table games 10%, live dealer games 5%.",
-            "category": "bonuses"
-          }
-        ],
-        "searchable": true
-      }
-    }
-  ]
-}`}
+                      {`import { z } from 'zod';
+
+/* ------------------------------------------------------------- */
+/* 1.  SUB‑SCHEMAS  –  each prop carries E‑E‑A‑T guidance         */
+/* ------------------------------------------------------------- */
+
+/* HEADER */
+export const headerPropsSchema = z.object({
+  title: z.string().min(3).describe(
+    'H1 that states the brand + page purpose. EEAT: must be factual, avoid hype.'
+  ),
+  subtitle: z.string().optional().describe(
+    'One‑line value promise. Keep it specific (e.g. “Data‑driven bonus breakdown”).'
+  ),
+  logo: z.string().url().describe(
+    'Brand mark in SVG/PNG. Ensure usage rights; alt text applied for accessibility.'
+  ),
+  navigation: z
+    .array(z.string())
+    .min(1)
+    .describe(
+      'Clear anchors (“Games”, “Bonuses” …). Promote trust via transparent labelling.'
+    ),
+});
+
+/* HERO */
+export const heroPropsSchema = z.object({
+  title: z.string().describe(
+    'Attention hook. YMYL: no misleading claims (e.g. “Guaranteed wins”).'
+  ),
+  subtitle: z.string().optional(),
+  backgroundImage: z.string().url().describe(
+    'High‑res image you own / royalty‑free. Avoid stock clichés; keep load <150 kB.'
+  ),
+  ctaText: z
+    .string()
+    .describe('Action verb + benefit (“Claim 500 % Bonus”). No false urgency.'),
+  ctaUrl: z.string().url(),
+  trustBadges: z
+    .array(
+      z.enum(['licensed', 'ssl-secured', 'fair-play', 'fast-payouts', '24-7-support'])
+    )
+    .min(1)
+    .describe(
+      'Objective badges only. Each must be verifiable in T&Cs / regulator DB.'
+    ),
+});
+
+/* BONUS CARD */
+export const bonusCardPropsSchema = z.object({
+  bonus: z.number().positive().describe('Numeric value, no “up to” padding.'),
+  currency: z.enum(['USD', 'EUR', 'GBP', 'BTC']),
+  wager: z
+    .number()
+    .int()
+    .positive()
+    .describe('Exact rollover to meet Google “YourMoney” transparency.'),
+  minDeposit: z.number().positive(),
+  ctaUrl: z.string().url(),
+  terms: z
+    .array(z.string())
+    .min(1)
+    .describe('Key bonus restrictions in plain language, bullet style.'),
+  validUntil: z
+    .string()
+    .describe('ISO or written date. Helps users gauge bonus recency.'),
+  bonusCode: z.string().optional(),
+});
+
+/* GAME GRID */
+export const gameSchema = z.object({
+  name: z.string(),
+  provider: z.string().describe('List officially licensed vendors only.'),
+  rtp: z.number().min(80).max(100).describe('Return‑to‑Player % (source‑cited).'),
+  volatility: z.enum(['low', 'medium', 'high']),
+  thumbnail: z.string().url(),
+});
+
+export const gameGridPropsSchema = z.object({
+  games: z.array(gameSchema).min(1),
+  filterOptions: z
+    .array(z.enum(['provider', 'rtp', 'volatility']))
+    .describe('Give users agency to sort; UX trust signal.'),
+  sortBy: z
+    .enum(['popularity', 'rtp', 'alphabetical'])
+    .default('popularity')
+    .describe('Default should align with user benefit, not operator promotion.'),
+});
+
+/* PROS / CONS */
+export const prosConsPropsSchema = z.object({
+  pros: z
+    .array(z.string())
+    .min(1)
+    .describe('Concrete benefits backed by evidence (e.g., payout speed log).'),
+  cons: z
+    .array(z.string())
+    .min(1)
+    .describe('Include real drawbacks; balances page for E‑E‑A‑T credibility.'),
+  overallRating: z
+    .number()
+    .min(0)
+    .max(10)
+    .describe('Expert score— must map to a documented rubric in methodology page.'),
+});
+
+/* PAYMENT METHODS */
+export const paymentMethodSchema = z.object({
+  name: z.string(),
+  type: z
+    .enum(['credit_card', 'e-wallet', 'bank_transfer', 'crypto'])
+    .describe('Taxonomy mirroring FCA categories.'),
+  minDeposit: z.number().positive(),
+  maxDeposit: z.number().positive(),
+  processingTime: z
+    .string()
+    .describe('Use ranges validated via first‑hand test (e.g. “1–3 days”).'),
+});
+
+export const paymentMethodsPropsSchema = z.object({
+  methods: z.array(paymentMethodSchema).min(1),
+  currencies: z
+    .array(z.enum(['USD', 'EUR', 'GBP', 'BTC']))
+    .min(1)
+    .describe('List only those truly supported; cross‑check cashier page.'),
+  fees: z.string().describe('State “None” explicitly if zero; boosts transparency.'),
+});
+
+/* FAQ */
+export const faqItemSchema = z.object({
+  question: z.string().describe('User‑intent phrasing (“How do I…?”).'),
+  answer: z
+    .string()
+    .describe(
+      'Direct, fact‑checked answer. Cite sources or own test when relevant.'
+    ),
+  category: z.string(),
+});
+
+export const faqPropsSchema = z.object({
+  categories: z.array(z.string()).min(1),
+  items: z
+    .array(faqItemSchema)
+    .min(1)
+    .describe('Cover top support queries; keep each answer <120 words.'),
+  searchable: z.boolean().default(true),
+});
+
+/* ------------------------------------------------------------- */
+/* 2. BLOCK UNION                                                */
+/* ------------------------------------------------------------- */
+export const componentBlockSchema = z.discriminatedUnion('key', [
+  z.object({ key: z.literal('HEADER'), props: headerPropsSchema }),
+  z.object({ key: z.literal('HERO'), props: heroPropsSchema }),
+  z.object({ key: z.literal('BONUS_CARD'), props: bonusCardPropsSchema }),
+  z.object({ key: z.literal('GAME_GRID'), props: gameGridPropsSchema }),
+  z.object({ key: z.literal('PROS_CONS'), props: prosConsPropsSchema }),
+  z.object({
+    key: z.literal('PAYMENT_METHODS'),
+    props: paymentMethodsPropsSchema,
+  }),
+  z.object({ key: z.literal('FAQ'), props: faqPropsSchema }),
+]);
+
+/* ------------------------------------------------------------- */
+/* 3. MASTER SCHEMA                                              */
+/* ------------------------------------------------------------- */
+export const landingContentSchema = z.object({
+  page: z
+    .string()
+    .regex(/^\/[a-z0-9\-\\/]+$/)
+    .describe('Relative URL; should align with sitemap to avoid orphan pages.'),
+  brand: z
+    .string()
+    .describe('Must match official trademark spelling to enhance relevance.'),
+  layout: z.enum(['casino-review']).describe(
+    'Preset layout variant; adding new layouts requires QA + design audit.'
+  ),
+  seoMeta: z.object({
+    title: z
+      .string()
+      .describe('70‑char max; include brand + primary keyword.'),
+    description: z
+      .string()
+      .describe('155‑char max; actionable benefit + EEAT proof (“tested July 2025”).'),
+    keywords: z.array(z.string()).min(1),
+  }),
+  components: z
+    .array(componentBlockSchema)
+    .min(1)
+    .refine(arr => arr.some(b => b.key === 'HEADER'), {
+      message: 'HEADER component is required for EEAT clarity.',
+    }),
+});
+
+export type LandingContent = z.infer<typeof landingContentSchema>;
+`}
                     </pre>
                   </div>
                 </div>
