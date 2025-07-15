@@ -5,6 +5,27 @@ import { DollarSign, TrendingUp, Calendar, Target, BarChart } from "lucide-react
 import { CalendlyScheduler } from "./calendly-scheduler"
 
 export function InvestmentAsk() {
+  // Realistic first-year revenue progression
+  const monthlyData = [
+    { month: 1, sites: 0, revenue: 0, costs: 27000, profit: -27000 },
+    { month: 2, sites: 0, revenue: 0, costs: 27000, profit: -27000 },
+    { month: 3, sites: 0, revenue: 0, costs: 27000, profit: -27000 },
+    { month: 4, sites: 0, revenue: 0, costs: 27000, profit: -27000 },
+    { month: 5, sites: 0, revenue: 0, costs: 27000, profit: -27000 },
+    { month: 6, sites: 0, revenue: 0, costs: 27000, profit: -27000 },
+    { month: 7, sites: 5, revenue: 4500, costs: 11000, profit: -6500 },
+    { month: 8, sites: 15, revenue: 13500, costs: 11000, profit: 2500 },
+    { month: 9, sites: 25, revenue: 22500, costs: 11000, profit: 11500 },
+    { month: 10, sites: 40, revenue: 36000, costs: 11000, profit: 25000 },
+    { month: 11, sites: 60, revenue: 54000, costs: 11000, profit: 43000 },
+    { month: 12, sites: 80, revenue: 72000, costs: 11000, profit: 61000 },
+  ]
+
+  const totalFirstYearRevenue = monthlyData.slice(6).reduce((sum, month) => sum + month.revenue, 0)
+  const totalFirstYearCosts = 162000 + 11000 * 6 // Initial investment + 6 months operating
+  const firstYearProfit = totalFirstYearRevenue - 66000 // Only operating costs for revenue months
+  const firstYearROI = Math.round((firstYearProfit / 162000) * 100)
+
   return (
     <section id="investment-section" className="py-24 px-6 lg:px-8 bg-gradient-to-r from-purple-900/20 to-pink-900/20">
       <div className="mx-auto max-w-7xl">
@@ -31,7 +52,7 @@ export function InvestmentAsk() {
                   </div>
                   <div className="text-center p-4 bg-white/5 rounded-lg">
                     <Target className="h-6 w-6 text-green-400 mx-auto mb-2" />
-                    <div className="text-2xl font-bold text-white">6</div>
+                    <div className="text-2xl font-bold text-white">8</div>
                     <div className="text-sm text-gray-300">Month Break-even</div>
                   </div>
                 </div>
@@ -63,28 +84,34 @@ export function InvestmentAsk() {
               <CardHeader>
                 <CardTitle className="text-white flex items-center gap-2">
                   <BarChart className="h-5 w-5" />
-                  Financial Projections
+                  First Year Projections (Realistic)
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
                   <div className="grid grid-cols-2 gap-4">
                     <div className="text-center p-3 bg-purple-900/20 rounded-lg">
-                      <div className="text-lg font-bold text-white">Month 6</div>
+                      <div className="text-lg font-bold text-white">Month 7</div>
                       <div className="text-sm text-gray-300">First Revenue</div>
-                      <div className="text-purple-300 font-semibold">$15,000</div>
+                      <div className="text-purple-300 font-semibold">$4,500</div>
                     </div>
                     <div className="text-center p-3 bg-blue-900/20 rounded-lg">
-                      <div className="text-lg font-bold text-white">Month 6</div>
+                      <div className="text-lg font-bold text-white">Month 8</div>
                       <div className="text-sm text-gray-300">Break-even</div>
-                      <div className="text-blue-300 font-semibold">$11,000</div>
+                      <div className="text-blue-300 font-semibold">$13,500</div>
                     </div>
                   </div>
                   <div className="text-center p-4 bg-green-900/20 rounded-lg border border-green-500/20">
                     <div className="text-xl font-bold text-white">Month 12</div>
-                    <div className="text-sm text-gray-300 mb-1">Target Monthly Revenue</div>
-                    <div className="text-green-300 font-bold text-2xl">$180,000</div>
-                    <div className="text-xs text-gray-400 mt-1">Based on 100 active sites</div>
+                    <div className="text-sm text-gray-300 mb-1">Monthly Revenue</div>
+                    <div className="text-green-300 font-bold text-2xl">$72,000</div>
+                    <div className="text-xs text-gray-400 mt-1">Based on 80 active sites</div>
+                  </div>
+                  <div className="text-center p-4 bg-yellow-900/20 rounded-lg border border-yellow-500/20">
+                    <div className="text-lg font-bold text-white">Year 1 Total</div>
+                    <div className="text-sm text-gray-300 mb-1">Revenue (6 months)</div>
+                    <div className="text-yellow-300 font-bold text-xl">$202,500</div>
+                    <div className="text-xs text-gray-400 mt-1">July - December revenue</div>
                   </div>
                 </div>
               </CardContent>
@@ -130,82 +157,60 @@ export function InvestmentAsk() {
               <CardHeader>
                 <CardTitle className="text-white flex items-center gap-2">
                   <TrendingUp className="h-5 w-5" />
-                  Revenue Model & Projections
+                  Revenue Growth Timeline
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
                   <div className="p-4 bg-gradient-to-r from-green-900/20 to-blue-900/20 rounded-lg border border-green-500/20">
-                    <h4 className="text-white font-semibold mb-3">Conservative Assumptions</h4>
+                    <h4 className="text-white font-semibold mb-3">Monthly Progression (Year 1)</h4>
                     <div className="space-y-2 text-sm">
                       <div className="flex justify-between">
-                        <span className="text-gray-300">Sites deployed per month:</span>
-                        <span className="text-green-300 font-semibold">20-30</span>
+                        <span className="text-gray-300">Month 7 (5 sites):</span>
+                        <span className="text-green-300 font-semibold">$4,500</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-300">Average ranking time:</span>
-                        <span className="text-green-300 font-semibold">2-4 weeks</span>
+                        <span className="text-gray-300">Month 8 (15 sites):</span>
+                        <span className="text-green-300 font-semibold">$13,500</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-300">Click-through rate:</span>
-                        <span className="text-green-300 font-semibold">3-5%</span>
+                        <span className="text-gray-300">Month 9 (25 sites):</span>
+                        <span className="text-green-300 font-semibold">$22,500</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-300">Conversion rate (click → FTD):</span>
-                        <span className="text-green-300 font-semibold">0.5%</span>
+                        <span className="text-gray-300">Month 10 (40 sites):</span>
+                        <span className="text-green-300 font-semibold">$36,000</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-300">Average commission per FTD:</span>
-                        <span className="text-green-300 font-semibold">$200</span>
+                        <span className="text-gray-300">Month 11 (60 sites):</span>
+                        <span className="text-green-300 font-semibold">$54,000</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-gray-300">Month 12 (80 sites):</span>
+                        <span className="text-green-300 font-semibold">$72,000</span>
                       </div>
                     </div>
                   </div>
 
                   <div className="p-4 bg-purple-900/20 rounded-lg border border-purple-500/20">
-                    <h4 className="text-white font-semibold mb-3">Per-Site Economics</h4>
+                    <h4 className="text-white font-semibold mb-3">Year 2 Projections</h4>
                     <div className="space-y-2 text-sm">
                       <div className="flex justify-between">
-                        <span className="text-gray-300">Monthly search volume:</span>
-                        <span className="text-purple-300 font-semibold">100K-2M</span>
+                        <span className="text-gray-300">Target sites by Month 24:</span>
+                        <span className="text-purple-300 font-semibold">120 sites</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-300">Expected monthly clicks:</span>
-                        <span className="text-purple-300 font-semibold">3K-100K</span>
+                        <span className="text-gray-300">Monthly revenue potential:</span>
+                        <span className="text-purple-300 font-semibold">$216,000</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-300">Monthly conversions:</span>
-                        <span className="text-purple-300 font-semibold">15-500</span>
+                        <span className="text-gray-300">Annual revenue (Year 2):</span>
+                        <span className="text-purple-300 font-semibold">$2.59M</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-300">Monthly revenue per site:</span>
-                        <span className="text-purple-300 font-semibold">$900-1,800</span>
+                        <span className="text-gray-300">Net profit (Year 2):</span>
+                        <span className="text-purple-300 font-bold">$2.46M</span>
                       </div>
-                    </div>
-                  </div>
-
-                  <div className="p-4 bg-blue-900/20 rounded-lg border border-blue-500/20">
-                    <h4 className="text-white font-semibold mb-3">Annual Revenue Calculation</h4>
-                    <div className="space-y-2 text-sm">
-                      <div className="flex justify-between">
-                        <span className="text-gray-300">Target sites by Month 12:</span>
-                        <span className="text-blue-300 font-semibold">100 sites</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-gray-300">Average revenue per site:</span>
-                        <span className="text-blue-300 font-semibold">$1,800/mo</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-gray-300">Monthly revenue (100 × $1,800):</span>
-                        <span className="text-blue-300 font-semibold">$180,000</span>
-                      </div>
-                      <div className="flex justify-between border-t border-blue-500/20 pt-2 mt-2">
-                        <span className="text-white font-semibold">Annual Revenue ($180K × 12):</span>
-                        <span className="text-blue-300 font-bold text-lg">$2.16M</span>
-                      </div>
-                    </div>
-                    <div className="mt-2 p-2 bg-blue-800/20 rounded text-xs text-blue-200">
-                      <strong>Note:</strong> Using higher-end revenue estimate ($1,800) for mature sites with
-                      established rankings
                     </div>
                   </div>
 
@@ -214,36 +219,34 @@ export function InvestmentAsk() {
                     id="roi-calculation"
                     className="p-4 bg-yellow-900/20 rounded-lg border border-yellow-500/20 scroll-mt-24"
                   >
-                    <h4 className="text-white font-semibold mb-2">ROI Timeline</h4>
+                    <h4 className="text-white font-semibold mb-2">First Year ROI (Conservative)</h4>
                     <div className="space-y-1 text-sm">
                       <div className="flex justify-between">
-                        <span className="text-gray-300">Month 12 Annual Revenue:</span>
-                        <span className="text-yellow-300 font-bold">$2.16M</span>
+                        <span className="text-gray-300">Year 1 Revenue (6 months):</span>
+                        <span className="text-yellow-300 font-bold">$202,500</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-300">Annual Operating Costs:</span>
-                        <span className="text-yellow-300 font-bold">$132K</span>
+                        <span className="text-gray-300">Operating Costs (6 months):</span>
+                        <span className="text-yellow-300 font-bold">$66,000</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-300">Net Annual Profit:</span>
-                        <span className="text-yellow-300 font-bold">$2.03M</span>
+                        <span className="text-gray-300">Net Profit (Year 1):</span>
+                        <span className="text-yellow-300 font-bold">$136,500</span>
                       </div>
                       <div className="flex justify-between border-t border-yellow-500/20 pt-2 mt-2">
                         <span className="text-white font-semibold">ROI on Investment:</span>
-                        <span className="text-yellow-300 font-bold text-lg">1,253%</span>
+                        <span className="text-yellow-300 font-bold text-lg">84%</span>
                       </div>
                     </div>
                     <div className="mt-3 pt-3 border-t border-yellow-500/20">
                       <div className="text-xs text-gray-400">
-                        <strong>Calculation:</strong> ($2.03M profit / $162K investment) × 100 = 1,253% ROI
+                        <strong>Calculation:</strong> ($136,500 profit / $162K investment) × 100 = 84% ROI
                       </div>
                       <div className="text-xs text-gray-400 mt-1">
-                        <strong>Operating costs:</strong> $11K/mo ongoing (Link-builder $3K + Infrastructure $3K + Links
-                        $5K)
+                        <strong>Timeline:</strong> Break-even at Month 8, positive cash flow from Month 9
                       </div>
                       <div className="text-xs text-gray-400 mt-1">
-                        <strong>Sources:</strong> Based on Ahrefs traffic valuation, industry average conversion rates,
-                        and standard affiliate commission structures
+                        <strong>Year 2 ROI:</strong> Expected 1,500%+ as sites reach full maturity
                       </div>
                     </div>
                   </div>
@@ -274,7 +277,7 @@ export function InvestmentAsk() {
               <p className="text-gray-300 text-sm">Establish repo, CI, CF infra (2 weeks)</p>
             </div>
             <div className="p-6 bg-white/5 rounded-lg border border-white/10">
-              <div className="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold mx-3">
+              <div className="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold mx-auto mb-3">
                 3
               </div>
               <h4 className="text-white font-semibold mb-2">Deliver MVP Demo</h4>
