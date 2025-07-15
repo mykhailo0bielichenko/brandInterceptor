@@ -56,10 +56,46 @@ export function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-4">Documentation</h4>
             <div className="space-y-2 text-sm text-gray-400">
-              <p className="cursor-pointer hover:text-white transition-colors">Technical Architecture</p>
-              <p className="cursor-pointer hover:text-white transition-colors">Financial Projections</p>
-              <p className="cursor-pointer hover:text-white transition-colors">Risk Assessment</p>
-              <p className="cursor-pointer hover:text-white transition-colors">Team Profiles</p>
+              <a
+                href="#solution-architecture"
+                className="block cursor-pointer hover:text-white transition-colors"
+                onClick={(e) => {
+                  e.preventDefault()
+                  document.getElementById("solution-architecture")?.scrollIntoView({ behavior: "smooth" })
+                }}
+              >
+                Technical Architecture
+              </a>
+              <a
+                href="#investment-ask"
+                className="block cursor-pointer hover:text-white transition-colors"
+                onClick={(e) => {
+                  e.preventDefault()
+                  document.getElementById("investment-ask")?.scrollIntoView({ behavior: "smooth" })
+                }}
+              >
+                Financial Projections
+              </a>
+              <a
+                href="#market-opportunity"
+                className="block cursor-pointer hover:text-white transition-colors"
+                onClick={(e) => {
+                  e.preventDefault()
+                  document.getElementById("market-opportunity")?.scrollIntoView({ behavior: "smooth" })
+                }}
+              >
+                Risk Assessment
+              </a>
+              <a
+                href="#team"
+                className="block cursor-pointer hover:text-white transition-colors"
+                onClick={(e) => {
+                  e.preventDefault()
+                  document.getElementById("team")?.scrollIntoView({ behavior: "smooth" })
+                }}
+              >
+                Team Profiles
+              </a>
             </div>
           </div>
         </div>
