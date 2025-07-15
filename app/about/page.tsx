@@ -332,6 +332,8 @@ export default function AboutPage() {
           <CalendlyScheduler />
         </div>
       </div>
+            <Footer />
+
     </main>
   )
 }
