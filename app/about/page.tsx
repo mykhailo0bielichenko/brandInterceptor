@@ -234,7 +234,6 @@ export default function AboutPage() {
                   alt="Mykhailo Bielichenko - SEO Expert & Product Manager"
                   className="w-32 h-32 rounded-full border-4 border-purple-500/30 shadow-2xl"
                 />
-                <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-purple-500 to-pink-500"></div>
               </div>
             </div>
           </div>
