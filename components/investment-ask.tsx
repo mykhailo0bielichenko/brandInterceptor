@@ -3,22 +3,41 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { DollarSign, TrendingUp, Calendar, Target, BarChart } from "lucide-react"
 import { CalendlyScheduler } from "./calendly-scheduler"
+import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart"
+import {
+  Line,
+  LineChart,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  ResponsiveContainer,
+  ReferenceLine,
+  ReferenceDot,
+} from "recharts"
 
 export function InvestmentAsk() {
   // Updated realistic first-year revenue progression
   const monthlyData = [
-    { month: 1, sites: 0, revenue: 0, costs: 27000, profit: -27000 },
-    { month: 2, sites: 0, revenue: 0, costs: 27000, profit: -27000 },
-    { month: 3, sites: 0, revenue: 0, costs: 27000, profit: -27000 },
-    { month: 4, sites: 0, revenue: 0, costs: 27000, profit: -27000 },
-    { month: 5, sites: 5, revenue: 500, costs: 27000, profit: -26500 },
-    { month: 6, sites: 15, revenue: 1500, costs: 27000, profit: -25500 },
-    { month: 7, sites: 35, revenue: 4500, costs: 11000, profit: -6500 },
-    { month: 8, sites: 65, revenue: 13500, costs: 11000, profit: 2500 },
-    { month: 9, sites: 100, revenue: 22500, costs: 11000, profit: 11500 },
-    { month: 10, sites: 140, revenue: 36000, costs: 11000, profit: 25000 },
-    { month: 11, sites: 200, revenue: 54000, costs: 11000, profit: 43000 },
-    { month: 12, sites: 300, revenue: 72000, costs: 11000, profit: 61000 },
+    { month: 1, sites: 0, revenue: 0, costs: 27000, profit: -27000, cumulative: -27000 },
+    { month: 2, sites: 0, revenue: 0, costs: 27000, profit: -27000, cumulative: -54000 },
+    { month: 3, sites: 0, revenue: 0, costs: 27000, profit: -27000, cumulative: -81000 },
+    { month: 4, sites: 0, revenue: 0, costs: 27000, profit: -27000, cumulative: -108000 },
+    { month: 5, sites: 5, revenue: 500, costs: 27000, profit: -26500, cumulative: -134500 },
+    { month: 6, sites: 15, revenue: 1500, costs: 27000, profit: -25500, cumulative: -160000 },
+    { month: 7, sites: 35, revenue: 4500, costs: 11000, profit: -6500, cumulative: -166500 },
+    { month: 8, sites: 65, revenue: 13500, costs: 11000, profit: 2500, cumulative: -164000 },
+    { month: 9, sites: 100, revenue: 22500, costs: 11000, profit: 11500, cumulative: -152500 },
+    { month: 10, sites: 140, revenue: 36000, costs: 11000, profit: 25000, cumulative: -127500 },
+    { month: 11, sites: 200, revenue: 54000, costs: 11000, profit: 43000, cumulative: -84500 },
+    { month: 12, sites: 300, revenue: 72000, costs: 11000, profit: 61000, cumulative: -23500 },
+  ]
+
+  // Extended data for Year 2 to show full ROI point
+  const extendedData = [
+    ...monthlyData,
+    { month: 13, sites: 350, revenue: 84000, costs: 11000, profit: 73000, cumulative: 49500 },
+    { month: 14, sites: 400, revenue: 96000, costs: 11000, profit: 85000, cumulative: 134500 },
+    { month: 15, sites: 450, revenue: 108000, costs: 11000, profit: 97000, cumulative: 231500 },
   ]
 
   const totalFirstYearRevenue = monthlyData.slice(4).reduce((sum, month) => sum + month.revenue, 0) // Months 5-12
@@ -26,12 +45,119 @@ export function InvestmentAsk() {
   const firstYearProfit = totalFirstYearRevenue - totalOperatingCosts
   const firstYearROI = Math.round((firstYearProfit / 162000) * 100)
 
+  const chartConfig = {
+    revenue: {
+      label: "Revenue",
+      color: "hsl(142, 76%, 36%)",
+    },
+    costs: {
+      label: "Operating Costs",
+      color: "hsl(346, 87%, 43%)",
+    },
+    cumulative: {
+      label: "Cumulative Profit",
+      color: "hsl(217, 91%, 60%)",
+    },
+  }
+
   return (
     <section id="investment-section" className="py-24 px-6 lg:px-8 bg-gradient-to-r from-purple-900/20 to-pink-900/20">
       <div className="mx-auto max-w-7xl">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold text-white sm:text-4xl">Investment Ask</h2>
           <p className="mt-4 text-lg text-gray-300">We seek USD 162k to fund the 6-month build & launch phase</p>
+        </div>
+
+        {/* Financial Performance Chart */}
+        <div className="mb-16">
+          <Card className="bg-white/5 border-white/10">
+            <CardHeader>
+              <CardTitle className="text-white flex items-center gap-2">
+                <BarChart className="h-5 w-5" />
+                Financial Performance Timeline
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <ChartContainer config={chartConfig} className="h-[400px]">
+                <ResponsiveContainer width="100%" height="100%">
+                  <LineChart data={extendedData} margin={{ top: 20, right: 30, left: 20, bottom: 20 }}>
+                    <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.1)" />
+                    <XAxis dataKey="month" stroke="rgba(255,255,255,0.7)" tick={{ fill: "rgba(255,255,255,0.7)" }} />
+                    <YAxis
+                      stroke="rgba(255,255,255,0.7)"
+                      tick={{ fill: "rgba(255,255,255,0.7)" }}
+                      tickFormatter={(value) => `$${(value / 1000).toFixed(0)}K`}
+                    />
+                    <ChartTooltip
+                      content={<ChartTooltipContent />}
+                      formatter={(value, name) => [
+                        `$${(value as number).toLocaleString()}`,
+                        name === "revenue" ? "Revenue" : name === "costs" ? "Operating Costs" : "Cumulative Profit",
+                      ]}
+                    />
+
+                    {/* Break-even line */}
+                    <ReferenceLine y={0} stroke="rgba(255,255,255,0.5)" strokeDasharray="5 5" />
+
+                    {/* Break-even point marker */}
+                    <ReferenceDot x={8} y={13500} r={6} fill="#10b981" stroke="#ffffff" strokeWidth={2} />
+
+                    {/* Full ROI point marker */}
+                    <ReferenceDot x={13} y={84000} r={6} fill="#8b5cf6" stroke="#ffffff" strokeWidth={2} />
+
+                    <Line
+                      type="monotone"
+                      dataKey="revenue"
+                      stroke="var(--color-revenue)"
+                      strokeWidth={3}
+                      dot={{ fill: "var(--color-revenue)", strokeWidth: 2, r: 4 }}
+                      name="revenue"
+                    />
+                    <Line
+                      type="monotone"
+                      dataKey="costs"
+                      stroke="var(--color-costs)"
+                      strokeWidth={3}
+                      dot={{ fill: "var(--color-costs)", strokeWidth: 2, r: 4 }}
+                      name="costs"
+                    />
+                    <Line
+                      type="monotone"
+                      dataKey="cumulative"
+                      stroke="var(--color-cumulative)"
+                      strokeWidth={3}
+                      dot={{ fill: "var(--color-cumulative)", strokeWidth: 2, r: 4 }}
+                      name="cumulative"
+                    />
+                  </LineChart>
+                </ResponsiveContainer>
+              </ChartContainer>
+
+              {/* Chart Legend */}
+              <div className="mt-4 flex flex-wrap justify-center gap-6 text-sm">
+                <div className="flex items-center gap-2">
+                  <div className="w-4 h-4 bg-green-600 rounded"></div>
+                  <span className="text-white">Monthly Revenue</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-4 h-4 bg-red-600 rounded"></div>
+                  <span className="text-white">Operating Costs</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-4 h-4 bg-blue-600 rounded"></div>
+                  <span className="text-white">Cumulative Profit</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                  <span className="text-white">Break-even (Month 8)</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 bg-purple-500 rounded-full"></div>
+                  <span className="text-white">Full ROI (Month 13)</span>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
@@ -251,7 +377,7 @@ export function InvestmentAsk() {
                         <strong>Calculation:</strong> ($116,500 profit / $162K investment) × 100 = 72% ROI
                       </div>
                       <div className="text-xs text-gray-400 mt-1">
-                        <strong>Timeline:</strong> First revenue Month 5, break-even Month 8, positive cash flow Month 9
+                        <strong>Timeline:</strong> First revenue Month 5, break-even Month 8, full ROI Month 13
                       </div>
                       <div className="text-xs text-gray-400 mt-1">
                         <strong>Year 2 ROI:</strong> Expected 800%+ as platform reaches full scale
