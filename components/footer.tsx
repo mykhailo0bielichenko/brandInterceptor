@@ -76,7 +76,8 @@ export function Footer() {
             © 2025 SEO Traffic Intercept Platform. Founded by Mykhailo Bielichenko. Prepared January 15, 2025.
           </p>
         </div>
-      </div>
+      
+      
     </footer>
   )
 }
