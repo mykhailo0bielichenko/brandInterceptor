@@ -101,7 +101,7 @@ export function DataFlowSection() {
               <CardHeader>
                 <CardTitle className="text-white flex items-center gap-2">
                   <Database className="h-5 w-5" />
-                  Complete Data Flow: From Discovery to Live Site
+                  Complete Data Flow: From Discovery to a Live Page
                 </CardTitle>
                 <p className="text-gray-300 text-sm">Click the diagram to view full-size interactive flowchart</p>
               </CardHeader>
