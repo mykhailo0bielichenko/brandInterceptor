@@ -12,13 +12,13 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <Hero />
-      <ExecutiveSummary />
-      <MarketOpportunity />
-      <DataFlowSection />
-      <SolutionArchitecture />
-      <Roadmap />
-      <Team />
-      <InvestmentAsk />
+      <ExecutiveSummary id="executive-summary" className="scroll-mt-24" />
+      <MarketOpportunity id="market-opportunity" className="scroll-mt-24" />
+      <DataFlowSection id="data-flow-section" className="scroll-mt-24" />
+      <SolutionArchitecture id="solution-architecture" className="scroll-mt-24" />
+      <Roadmap id="roadmap" className="scroll-mt-24" />
+      <Team id="team" className="scroll-mt-24" />
+      <InvestmentAsk id="investment-ask" className="scroll-mt-24" />
       <Footer />
     </main>
   )
