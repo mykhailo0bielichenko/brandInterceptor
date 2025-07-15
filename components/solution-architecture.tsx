@@ -490,7 +490,7 @@ export function SolutionArchitecture() {
 
           {/* Runtime Process */}
           <div className="mt-8">
-            <Card className="bg-gradient-to-r from-purple-900/20 to-pink-900/20 border-purple-500/20">
+            <Card className="bg-gradient-to-r from-purple-900 to-pink-900 border-purple-500">
               <CardHeader>
                 <CardTitle className="text-white">⚡ Runtime Rendering Process</CardTitle>
               </CardHeader>
@@ -526,7 +526,7 @@ export function SolutionArchitecture() {
                   </div>
                 </div>
 
-                <div className="mt-6 p-4 bg-green-900/20 rounded-lg border border-green-500/20">
+                <div className="mt-6 p-4 bg-green-900 rounded-lg border border-green-500">
                   <p className="text-green-300 text-sm">
                     <strong>Key Innovation:</strong> Two-phase generation (template → content) allows independent
                     optimization of layout vs copy, enabling rapid A/B testing and content refresh without rebuilding
