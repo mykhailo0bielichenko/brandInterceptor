@@ -342,7 +342,7 @@ export function DataFlowSection() {
           </div>
         </div>
       </section>
-<div className="text-center mb-16">
+<div className="text-center p-16 m-16 mx-auto max-w-7xl">
             <h2 className="text-3xl font-bold text-white sm:text-4xl">Data Flow Architecture</h2>
             <p className="mt-4 text-lg text-gray-300">
               Complete automation pipeline showing how keywords transform into live websites
@@ -350,7 +350,7 @@ export function DataFlowSection() {
           </div>
 
           {/* Main Data Flow Diagram */}
-          <div className="mb-16">
+          <div className="p-16 m-16 mx-auto max-w-7xl">
             <Card className="bg-white/5 border-white/10 overflow-hidden">
               <CardHeader>
                 <CardTitle className="text-white flex items-center gap-2">
