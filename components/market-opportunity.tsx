@@ -138,9 +138,9 @@ The resulting surge in Google searches of the brand creates an opening for a qui
           </Card>
         </div>
       </section>
-       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+       <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h3 className="text-2xl font-bold text-white mb-6">Real-time Case Study: "ck444"</h3>
+              <h1 className="text-2xl font-bold text-white mb-6">Real-time Case Study: "ck444"</h1>
               <div className="space-y-4">
                 <div className="flex justify-between items-center p-4 bg-white/5 rounded-lg border border-white/10">
                   <span className="text-gray-300">Keyword Difficulty</span>
@@ -253,7 +253,7 @@ The resulting surge in Google searches of the brand creates an opening for a qui
           </div>
 
           {/* Market Data Sources */}
-          <div id="market-data-sources" className="mt-16">
+          <div id="market-data-sources" className="mt-16 mx-auto max-w-7xl pb-24">
             <h3 className="text-2xl font-bold text-white mb-8 text-center">Market Data & Sources</h3>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               <Card className="bg-white/5 border-white/10">
