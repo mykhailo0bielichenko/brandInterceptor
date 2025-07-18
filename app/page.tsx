@@ -1,3 +1,5 @@
+"use client"
+
 import { Hero } from "@/components/hero"
 import { ExecutiveSummary } from "@/components/executive-summary"
 import { MarketOpportunity } from "@/components/market-opportunity"
