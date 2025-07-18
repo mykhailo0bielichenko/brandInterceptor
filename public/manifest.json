@@ -1,0 +1,21 @@
+{
+  "name": "BrandInterceptor - Casino SEO Traffic Interception Platform",
+  "short_name": "BrandInterceptor",
+  "description": "Revolutionary AI-powered platform that systematically intercepts organic search traffic from 75% of new casino brands that neglect SEO.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1a1a1a",
+  "theme_color": "#7c3aed",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
