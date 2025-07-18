@@ -146,27 +146,6 @@ export function Roadmap() {
           ))}
         </div>
 
-        <div className="mt-16">
-          <h3 className="text-xl font-bold text-white mb-8 text-center">Core Performance Metrics</h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div className="p-4 bg-white/5 rounded-lg border border-white/10">
-              <div className="text-2xl font-bold text-white">{"<48h"}</div>
-              <div className="text-sm text-gray-400">Time-to-first-index</div>
-            </div>
-            <div className="p-4 bg-white/5 rounded-lg border border-white/10">
-              <div className="text-2xl font-bold text-white">{"≥50%"}</div>
-              <div className="text-sm text-gray-400">Top-10 share per cohort</div>
-            </div>
-            <div className="p-4 bg-white/5 rounded-lg border border-white/10">
-              <div className="text-2xl font-bold text-white">2.2M+</div>
-              <div className="text-sm text-gray-400">Organic clicks/brand</div>
-            </div>
-            <div className="p-4 bg-white/5 rounded-lg border border-white/10">
-              <div className="text-2xl font-bold text-white">$90K+</div>
-              <div className="text-sm text-gray-400">Affiliate revenue/site</div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   )

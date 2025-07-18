@@ -210,8 +210,10 @@ export default function AboutPage() {
               </div>
               <div className="flex items-center gap-2 text-gray-300">
                 <Mail className="h-4 w-4" />
-                <a href="mailto:mykhailo@seoplatform.com" className="hover:text-white transition-colors">
-                  mykhailo@seoplatform.com
+                <a href="mailto:belichenko_@ukr.net" className="hover:text-white transition-colors">
+                  belichenko_@ukr.net
+
+
                 </a>
               </div>
               <div className="flex  items-center gap-2 text-gray-300">

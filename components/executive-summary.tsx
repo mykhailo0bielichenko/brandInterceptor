@@ -36,19 +36,7 @@ export function ExecutiveSummary() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {features.map((feature, index) => (
-            <Card key={index} className="bg-white/5 border-white/10 backdrop-blur-sm">
-              <CardHeader>
-                <feature.icon className="h-8 w-8 text-purple-400 mb-2" />
-                <CardTitle className="text-white">{feature.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-300 text-sm">{feature.description}</p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+        
       </div>
     </section>
   )

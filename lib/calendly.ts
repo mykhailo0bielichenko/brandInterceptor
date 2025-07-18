@@ -1,7 +1,7 @@
 const CALENDLY_API_BASE = "https://api.calendly.com"
-const CALENDLY_TOKEN =
-  process.env.CALENDLY_TOKEN ||
-  "eyJraWQiOiIxY2UxZTEzNjE3ZGNmNzY2YjNjZWJjY2Y4ZGM1YmFmYThhNjVlNjg0MDIzZjdjMzJiZTgzNDliMjM4MDEzNWI0IiwidHlwIjoiUEFUIiwiYWxnIjoiRVMyNTYifQ.eyJpc3MiOiJodHRwczovL2F1dGguY2FsZW5kbHkuY29tIiwiaWF0IjoxNzUyNTM4OTM3LCJqdGkiOiI2OWY2NGMzZi02YzY0LTRlODAtYjdlOC02MDMxMjQ3MGYyOWMiLCJ1c2VyX3V1aWQiOiJhZWY5MjZmMS02ZDk1LTRmZGMtYTY5OC00YjYzYmY3NTE3OWIifQ.oCJ6DbDKniFbvxseCYu0Tb51WCGt05XQtoYIG69mNJEMdjYjlKW4G-py4MIcfp2W6UNa4cl8Y33liT_Io05Mjw"
+
+// Use environment variable or fallback to empty string (will cause API calls to fail gracefully)
+const CALENDLY_TOKEN = process.env.CALENDLY_TOKEN || ""
 
 export interface CalendlyUser {
   uri: string
@@ -34,13 +34,21 @@ class CalendlyAPI {
     "Content-Type": "application/json",
   }
 
+  private isConfigured(): boolean {
+    return !!CALENDLY_TOKEN && CALENDLY_TOKEN !== ""
+  }
+
   async getCurrentUser(): Promise<CalendlyUser> {
+    if (!this.isConfigured()) {
+      throw new Error("Calendly API token not configured")
+    }
+
     const response = await fetch(`${CALENDLY_API_BASE}/users/me`, {
       headers: this.headers,
     })
 
     if (!response.ok) {
-      throw new Error("Failed to fetch user data")
+      throw new Error(`Failed to fetch user data: ${response.status} ${response.statusText}`)
     }
 
     const data = await response.json()
@@ -48,6 +56,11 @@ class CalendlyAPI {
   }
 
   async getEventTypes(): Promise<CalendlyEventType[]> {
+    if (!this.isConfigured()) {
+      console.warn("Calendly API token not configured, returning empty event types")
+      return []
+    }
+
     try {
       const user = await this.getCurrentUser()
       const response = await fetch(`${CALENDLY_API_BASE}/event_types?user=${user.uri}`, {
@@ -55,7 +68,7 @@ class CalendlyAPI {
       })
 
       if (!response.ok) {
-        throw new Error("Failed to fetch event types")
+        throw new Error(`Failed to fetch event types: ${response.status} ${response.statusText}`)
       }
 
       const data = await response.json()
@@ -67,6 +80,10 @@ class CalendlyAPI {
   }
 
   async getAvailability(eventTypeUri: string, startDate: string, endDate: string): Promise<CalendlyAvailability[]> {
+    if (!this.isConfigured()) {
+      throw new Error("Calendly API token not configured")
+    }
+
     try {
       const response = await fetch(
         `${CALENDLY_API_BASE}/event_type_available_times?event_type=${eventTypeUri}&start_time=${startDate}&end_time=${endDate}`,
@@ -76,7 +93,7 @@ class CalendlyAPI {
       )
 
       if (!response.ok) {
-        throw new Error("Failed to fetch availability")
+        throw new Error(`Failed to fetch availability: ${response.status} ${response.statusText}`)
       }
 
       const data = await response.json()
