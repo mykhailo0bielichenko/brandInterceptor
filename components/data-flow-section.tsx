@@ -15,6 +15,7 @@ import {
   Brain,
   Layers,
   ArrowRight,
+  ArrowDown
 } from "lucide-react"
 import Image from "next/image"
 import { useState, useEffect } from "react"
@@ -175,7 +176,7 @@ export function DataFlowSection() {
                     <Layers className="h-5 w-5" />
                     Schema-Guided Development Pipeline
                   </h4>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <div className=" gap-4">
                     <div className="text-center">
                       <div className="bg-purple-600/20 rounded-lg p-4 border border-purple-500/30">
                         <Code className="h-8 w-8 text-purple-400 mx-auto mb-2" />
@@ -186,7 +187,7 @@ export function DataFlowSection() {
                       </div>
                     </div>
                     <div className="flex items-center justify-center">
-                      <ArrowRight className="h-6 w-6 text-gray-400 rotate-90 md:rotate-0" />
+                      <ArrowDown className="h-6 w-6 text-gray-400 rotate-90 md:rotate-0" />
                     </div>
                     <div className="text-center">
                       <div className="bg-blue-600/20 rounded-lg p-4 border border-blue-500/30">
@@ -198,7 +199,7 @@ export function DataFlowSection() {
                       </div>
                     </div>
                     <div className="flex items-center justify-center md:col-start-2">
-                      <ArrowRight className="h-6 w-6 text-gray-400 rotate-90 md:rotate-0" />
+                      <ArrowDown className="h-6 w-6 text-gray-400 rotate-90 md:rotate-0" />
                     </div>
                     <div className="text-center md:col-start-3">
                       <div className="bg-green-600/20 rounded-lg p-4 border border-green-500/30">
