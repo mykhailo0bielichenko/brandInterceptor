@@ -14,8 +14,9 @@ import {
   Sparkles,
   Brain,
   Layers,
-  ArrowRight,
-  ArrowDown
+  ArrowDown,
+  AlertTriangle,
+  Clock,
 } from "lucide-react"
 import Image from "next/image"
 import { useState, useEffect } from "react"
@@ -104,15 +105,15 @@ export function DataFlowSection() {
       color: "bg-orange-500/20 text-orange-300 border-orange-500/30",
     },
 
-        {
+    {
       step: 8,
       title: "Setup Link Building",
-      description: "Tool: Automated outreach, PBN scheduler, Quality monitoring. Output: 30+ quality backlinks acquired over 2-4 weeks",
+      description:
+        "Tool: Automated outreach, PBN scheduler, Quality monitoring. Output: 30+ quality backlinks acquired over 2-4 weeks",
       status: "automated",
       time: "< 2 minutes",
       color: "bg-orange-500/20 text-orange-300 border-orange-500/30",
     },
-
   ]
 
   const futureEvidence = [
@@ -146,8 +147,6 @@ export function DataFlowSection() {
     <>
       <section id="data-flow-section" className="py-24 px-6 lg:px-8 bg-black/20">
         <div className="mx-auto max-w-7xl">
-          
-
           {/* Future of Web Development Section */}
           <div className="mb-16">
             <Card className="bg-gradient-to-br from-purple-900/20 to-blue-900/20 border-purple-500/30 overflow-hidden">
@@ -169,6 +168,8 @@ export function DataFlowSection() {
                     safety and enables AI agents to build entire software systems autonomously.
                   </p>
                 </div>
+
+                
 
                 {/* Multi-Step Process Visualization */}
                 <div className="bg-white/5 rounded-lg p-6 border border-white/10">
@@ -212,6 +213,7 @@ export function DataFlowSection() {
                     </div>
                   </div>
                 </div>
+                
 
                 {/* Evidence Grid */}
                 <div>
@@ -275,6 +277,43 @@ export function DataFlowSection() {
                     "We're not just building websites—we're pioneering the methodology that will enable AI agents to
                     construct entire software ecosystems."
                   </p>
+                </div>
+
+                {/* Critical Market Reality */}
+                <div className="bg-red-900/20 rounded-lg p-6 border border-red-500/30">
+                  <div className="flex items-center gap-3 mb-4">
+                    <AlertTriangle className="h-6 w-6 text-red-400" />
+                    <h4 className="text-red-300 font-bold text-lg">Critical Market Reality</h4>
+                  </div>
+                  <div className="space-y-4">
+                    <p className="text-gray-200 text-lg leading-relaxed">
+                      <strong className="text-red-300">
+                        All major affiliate marketing companies are actively integrating AI-based workflows.
+                      </strong>
+                      Companies like Commission Junction, ShareASale, and ClickBank are deploying AI for landing page
+                      generation, traffic optimization, and automated campaign management.
+                    </p>
+                    <div className="bg-red-800/20 rounded-lg p-4 border border-red-600/30">
+                      <div className="flex items-center gap-2 mb-2">
+                        <Clock className="h-5 w-5 text-red-400" />
+                        <span className="text-red-300 font-semibold">18-Month Window</span>
+                      </div>
+                      <p className="text-gray-200">
+                        If we don't compete with AI-powered automation, we'll lose to zero market share in less than 9
+                        months. Manual affiliate operations cannot compete with AI systems that can:
+                      </p>
+                      <ul className="mt-3 space-y-1 text-gray-300 text-sm">
+                        <li>• Generate 1000+ SEO supercharged landing pages with unique templates sharpened under user intent per day</li>
+                        <li>• Optimize conversion rates in real-time</li>
+                        <li>• Scale traffic acquisition 24/7</li>
+                        <li>• Automaticaly respond to Google's updates and market changes in minutes, not weeks</li>
+                      </ul>
+                    </div>
+                    <p className="text-purple-200 font-semibold text-center">
+                      "Adapt to AI or become irrelevant. There is no middle ground in affiliate marketing's AI
+                      revolution."
+                    </p>
+                  </div>
                 </div>
               </CardContent>
             </Card>
@@ -343,43 +382,45 @@ export function DataFlowSection() {
           </div>
         </div>
       </section>
-      
-      <div className="text-center p-16 m-16 mx-auto max-w-7xl">
-            <h2 className="text-3xl font-bold text-white sm:text-4xl">Data Flow Architecture of a single page genetation</h2>
-            <p className="mt-4 text-lg text-gray-300">
-              Complete automation pipeline showing how keywords transform into live websites
-            </p>
-          </div>
 
-          {/* Main Data Flow Diagram */}
-          <div className="p-16 m-16 mx-auto max-w-7xl">
-            <Card className="bg-white/5 border-white/10 overflow-hidden">
-              <CardHeader>
-                <CardTitle className="text-white flex items-center gap-2">
-                  <Database className="h-5 w-5" />
-                  Complete Data Flow: From Discovery to a Live Page
-                </CardTitle>
-                <p className="text-gray-300 text-sm">Click the diagram to view full-size interactive flowchart</p>
-              </CardHeader>
-              <CardContent className="p-0">
-                <div className="relative cursor-pointer group" onClick={() => setIsModalOpen(true)}>
-                  <Image
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-aQkXwB1NFygxFrAITyNtO38rJ6vLAw.png"
-                    alt="Complete data flow diagram showing the automated pipeline from keyword discovery to live website generation"
-                    width={800}
-                    height={1200}
-                    className="w-full h-[800px] object-contain transition-transform group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
-                    <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-white/20 backdrop-blur-sm rounded-lg p-3">
-                      <Maximize2 className="h-6 w-6 text-white" />
-                      <span className="text-white text-sm ml-2">Click to expand</span>
-                    </div>
-                  </div>
+      <div className="text-center p-16 m-16 mx-auto max-w-7xl">
+        <h2 className="text-3xl font-bold text-white sm:text-4xl">
+          Data Flow Architecture of a single page genetation
+        </h2>
+        <p className="mt-4 text-lg text-gray-300">
+          Complete automation pipeline showing how keywords transform into live websites
+        </p>
+      </div>
+
+      {/* Main Data Flow Diagram */}
+      <div className=" mx-auto max-w-7xl">
+        <Card className="bg-white/5 border-white/10 overflow-hidden">
+          <CardHeader>
+            <CardTitle className="text-white flex items-center gap-2">
+              <Database className="h-5 w-5" />
+              Complete Data Flow: From Discovery to a Live Page
+            </CardTitle>
+            <p className="text-gray-300 text-sm">Click the diagram to view full-size interactive flowchart</p>
+          </CardHeader>
+          <CardContent className="p-0">
+            <div className="relative cursor-pointer group" onClick={() => setIsModalOpen(true)}>
+              <Image
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-aQkXwB1NFygxFrAITyNtO38rJ6vLAw.png"
+                alt="Complete data flow diagram showing the automated pipeline from keyword discovery to live website generation"
+                width={800}
+                height={1200}
+                className="w-full h-[800px] object-contain transition-transform group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
+                <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-white/20 backdrop-blur-sm rounded-lg p-3">
+                  <Maximize2 className="h-6 w-6 text-white" />
+                  <span className="text-white text-sm ml-2">Click to expand</span>
                 </div>
-              </CardContent>
-            </Card>
-          </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
       {/* Full Screen Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm">
