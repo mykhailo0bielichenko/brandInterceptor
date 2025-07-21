@@ -5,6 +5,8 @@ import { ExecutiveSummary } from "@/components/executive-summary"
 import { MarketOpportunity } from "@/components/market-opportunity"
 import { DataFlowSection } from "@/components/data-flow-section"
 import { AIPortfolioShowcase } from "@/components/ai-portfolio-showcase"
+import { RevenueProjections } from "@/components/revenue-projections"
+
 import { Roadmap } from "@/components/roadmap"
 import { Footer } from "@/components/footer"
 import Head from "next/head"
@@ -49,6 +51,7 @@ export default function Home() {
             </div>
           </div>
         </section>
+      <RevenueProjections id="revenue-projections" className="scroll-mt-24" />
 
         <section className="py-24 px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
