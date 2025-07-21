@@ -307,10 +307,6 @@ export default function ReportPage() {
                   <p className="text-sm text-gray-400">Online Casino Market: New Entrants & SEO Investment Analysis</p>
                 </div>
               </div>
-              <Button variant="outline" className="text-white border-white/20 hover:bg-white/10 bg-transparent">
-                <Download className="h-4 w-4 mr-2" />
-                Download PDF
-              </Button>
             </div>
           </div>
         </div>

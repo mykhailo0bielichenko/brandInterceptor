@@ -4,6 +4,7 @@ import { Hero } from "@/components/hero"
 import { ExecutiveSummary } from "@/components/executive-summary"
 import { MarketOpportunity } from "@/components/market-opportunity"
 import { DataFlowSection } from "@/components/data-flow-section"
+import { AIPortfolioShowcase } from "@/components/ai-portfolio-showcase"
 import { Roadmap } from "@/components/roadmap"
 import { Footer } from "@/components/footer"
 import Head from "next/head"
@@ -29,6 +30,7 @@ export default function Home() {
         <ExecutiveSummary id="executive-summary" className="scroll-mt-24" />
         <MarketOpportunity id="market-opportunity" className="scroll-mt-24" />
         <DataFlowSection id="data-flow-section" className="scroll-mt-24" />
+        <AIPortfolioShowcase />
         <section className="py-24 px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <div className="text-center mb-16">
