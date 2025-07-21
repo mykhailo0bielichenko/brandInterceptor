@@ -582,32 +582,7 @@ export function InvestmentAsk() {
           </div>
         </div>
 
-        <div className="mt-16 text-center">
-          <h3 className="text-xl font-bold text-white mb-8">Next Steps</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="p-6 bg-white/5 rounded-lg border border-white/10">
-              <div className="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold mx-auto mb-3">
-                1
-              </div>
-              <h4 className="text-white font-semibold mb-2">Approve Budget & Hire Core Team</h4>
-              <p className="text-gray-300 text-sm">DevOps, Architect, AI-engineer (2 weeks)</p>
-            </div>
-            <div className="p-6 bg-white/5 rounded-lg border border-white/10">
-              <div className="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold mx-auto mb-3">
-                2
-              </div>
-              <h4 className="text-white font-semibold mb-2">Kick-off Sprint 0</h4>
-              <p className="text-gray-300 text-sm">Establish repo, CI, CF infra (2 weeks)</p>
-            </div>
-            <div className="p-6 bg-white/5 rounded-lg border border-white/10">
-              <div className="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold mx-auto mb-3">
-                3
-              </div>
-              <h4 className="text-white font-semibold mb-2">Deliver MVP Demo</h4>
-              <p className="text-gray-300 text-sm">Live prototype to investors (end Week 4)</p>
-            </div>
-          </div>
-        </div>
+        
       </div>
     </section>
   )
