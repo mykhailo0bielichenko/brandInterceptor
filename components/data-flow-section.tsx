@@ -343,8 +343,9 @@ export function DataFlowSection() {
           </div>
         </div>
       </section>
-<div className="text-center p-16 m-16 mx-auto max-w-7xl">
-            <h2 className="text-3xl font-bold text-white sm:text-4xl">Data Flow Architecture</h2>
+      
+      <div className="text-center p-16 m-16 mx-auto max-w-7xl">
+            <h2 className="text-3xl font-bold text-white sm:text-4xl">Data Flow Architecture of a single page genetation</h2>
             <p className="mt-4 text-lg text-gray-300">
               Complete automation pipeline showing how keywords transform into live websites
             </p>
